@@ -6,16 +6,33 @@
     <attr name="collapsedText" format="string" />
     <attr name="trimLines" format="integer" />
 
+    <!--显示更多内容-->
     <declare-styleable name="MoreTextView">
         <attr name="expandedText" />
-        <attr name="collapsedText"/>
+        <attr name="collapsedText" />
         <attr name="trimLines" />
         <attr name="textSize" />
         <attr name="textColor" />
     </declare-styleable>
+
+    <!--折叠显示的TextView-->
     <declare-styleable name="CollapsedTextView">
         <attr name="expandedText" />
-        <attr name="collapsedText"/>
+        <attr name="collapsedText" />
         <attr name="trimLines" />
+    </declare-styleable>
+
+    <!--自定义下载进度-->
+    <declare-styleable name="CirclesProgressBar">
+        <attr name="circlesWidth" format="dimension" />
+        <attr name="circlesColor" format="color" />
+        <attr name="textCrude" format="dimension" />
+        <attr name="textColor" />
+        <attr name="textSize" />
+        <attr name="currentProgressColor" format="color" />
+        <attr name="currentProgress" format="integer" />
+        <attr name="isPercent" format="boolean" />
+        <attr name="style" format="integer" />
+        <attr name="currentScheduleWidth" format="dimension" />
     </declare-styleable>
 </resources>

@@ -14,18 +14,36 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import jack.demo.R;
 
 public class MainActivity extends Activity {
-    private ListView list;
+    @InjectView(R.id.list)
+    ListView list;
     private ArrayList<ActivityInfo> mActivities = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        list = (ListView) findViewById(R.id.list);
+        ButterKnife.inject(this);
 
+        updateActivityInfos();
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent();
+                intent.setClassName(MainActivity.this, mActivities.get(position).name);
+                startActivity(intent);
+            }
+        });
+    }
+
+    /**
+     * 更新activity的信息，并更新到每个item
+     */
+    private void updateActivityInfos() {
         try {
             PackageInfo pi = getPackageManager().getPackageInfo("jack.demo",
                     PackageManager.GET_ACTIVITIES);
@@ -37,13 +55,13 @@ public class MainActivity extends Activity {
             //获取Activity的名字
             ArrayList<String> names = new ArrayList<>();
 
-            for(int i = mActivities.size() - 1; i > -1;i--){
-                if(mActivities.get(i).name.equals(ourName)){
+            for (int i = mActivities.size() - 1; i > -1; i--) {
+                if (mActivities.get(i).name.equals(ourName)) {
                     mActivities.remove(i);
-                }else{
-                    if(mActivities.get(i).name != null){
+                } else {
+                    if (mActivities.get(i).name != null) {
                         names.add(0, mActivities.get(i).name.toString());
-                    }else{
+                    } else {
                         mActivities.remove(i);
                     }
                 }
@@ -58,14 +76,5 @@ public class MainActivity extends Activity {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent();
-                intent.setClassName(MainActivity.this, mActivities.get(position).name);
-                startActivity(intent);
-            }
-        });
     }
 }

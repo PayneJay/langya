@@ -18,6 +18,7 @@
 
         <activity android:name=".activity.MoreTextViewActivity"></activity>
         <activity android:name=".activity.CollapsedActivity"></activity>
+        <activity android:name=".activity.ProgressViewActivity"></activity>
     </application>
 
 </manifest>
