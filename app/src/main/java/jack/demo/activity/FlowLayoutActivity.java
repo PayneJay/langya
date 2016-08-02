@@ -62,6 +62,7 @@ public class FlowLayoutActivity extends Activity {
         ViewGroup.MarginLayoutParams params = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.setMargins(0, 0, 20, 20);
         tv.setLayoutParams(params);
+        tv.setPadding(10, 5, 10, 5);
         tv.setBackgroundResource(R.drawable.button_style);
         tv.setText(tvName);
         tv.setOnClickListener(new View.OnClickListener() {

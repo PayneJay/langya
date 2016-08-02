@@ -39,7 +39,6 @@ public class CalendarCard extends View {
      * 单元格点击的回调接口
      *
      * @author wuwenjie
-     *
      */
     public interface OnCellClickListener {
         void clickDate(CustomDate date); // 回调点击的日期
@@ -107,7 +106,7 @@ public class CalendarCard extends View {
                     rows[j].cells[i] = new Cell(CustomDate.modifiDayForObject(
                             mShowDate, day), State.CURRENT_MONTH_DAY, i, j);
                     // 今天
-                    if (isCurrentMonth && day == monthDay ) {
+                    if (isCurrentMonth && day == monthDay) {
                         CustomDate date = CustomDate.modifiDayForObject(mShowDate, day);
                         rows[j].cells[i] = new Cell(date, State.TODAY, i, j);
                     }
@@ -183,6 +182,7 @@ public class CalendarCard extends View {
 
     /**
      * 计算点击的单元格
+     *
      * @param col
      * @param row
      */
@@ -210,7 +210,6 @@ public class CalendarCard extends View {
      * 组元素
      *
      * @author wuwenjie
-     *
      */
     class Row {
         public int j;
@@ -236,7 +235,6 @@ public class CalendarCard extends View {
      * 单元格元素
      *
      * @author wuwenjie
-     *
      */
     class Cell {
         public CustomDate date;
@@ -284,11 +282,10 @@ public class CalendarCard extends View {
     }
 
     /**
-     *
      * @author wuwenjie 单元格的状态 当前月日期，过去的月的日期，下个月的日期
      */
     enum State {
-        TODAY,CURRENT_MONTH_DAY, PAST_MONTH_DAY, NEXT_MONTH_DAY, UNREACH_DAY;
+        TODAY, CURRENT_MONTH_DAY, PAST_MONTH_DAY, NEXT_MONTH_DAY, UNREACH_DAY;
     }
 
     // 从左往右划，上一个月

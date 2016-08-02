@@ -4,13 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#f6f1ea"
-        >
+        android:background="#f6f1ea">
 
         <ImageButton
             android:id="@+id/btnPreMonth"
@@ -54,14 +53,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="20dip"
             android:layout_marginBottom="2dip"
-            android:layout_marginTop="2dip" >
+            android:layout_marginTop="2dip">
 
             <TableRow>
 
@@ -74,6 +72,7 @@
                     style="@style/dateStyle"
                     android:text="@string/monday"
                     android:textColor="@color/canlendar_text_color" />
+
                 <TextView
                     style="@style/dateStyle"
                     android:text="@string/thesday"
@@ -105,17 +104,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
+        android:layout_marginTop="15dp"
         android:layout_weight="1"
-        android:layout_marginTop="15dp">
+        android:orientation="vertical">
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vp_calendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/white" >
-        </android.support.v4.view.ViewPager>
+            android:background="@color/white"></android.support.v4.view.ViewPager>
     </LinearLayout>
 
 </LinearLayout>

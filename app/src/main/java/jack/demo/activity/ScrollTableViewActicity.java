@@ -82,9 +82,9 @@ public class ScrollTableViewActicity extends Activity {
             // imageView = (ImageView) convertView;   //直接使用ImageView时
             imageView = (ImageView) convertView.findViewById(R.id.cell_image); //如果直接使用ImageView,这一行不要
             imageView.setBackgroundColor(Color.WHITE);
-            if (position%2 == 0){
+            if (position % 2 == 0) {
                 imageView.setImageResource(R.drawable.ctrip);
-            }else{
+            } else {
                 imageView.setImageResource(R.drawable.qunar);
             }
             imageView.refreshDrawableState();

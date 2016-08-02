@@ -14,10 +14,11 @@ import java.util.List;
  */
 public class FlowLayout extends ViewGroup {
     //记录每个View的位置
-    private List<ChildPos> mChildPos = new ArrayList<ChildPos>();
+    private List<ChildPos> mChildPos = new ArrayList<>();
 
     private class ChildPos {
         int left, top, right, bottom;
+
         public ChildPos(int left, int top, int right, int bottom) {
             this.left = left;
             this.top = top;
@@ -36,8 +37,9 @@ public class FlowLayout extends ViewGroup {
 
     /**
      * 最终调用这个构造方法
-     * @param context 上下文
-     * @param attrs xml属性集合
+     *
+     * @param context  上下文
+     * @param attrs    xml属性集合
      * @param defStyle Theme中定义的style
      */
     public FlowLayout(Context context, AttributeSet attrs, int defStyle) {
@@ -102,8 +104,7 @@ public class FlowLayout extends ViewGroup {
                 lineHeight = Math.max(lineHeight, childHeight);
             }
             //最后一个控件
-            if (i == count - 1)
-            {
+            if (i == count - 1) {
                 width = Math.max(lineWidth, width);
                 height += lineHeight;
             }

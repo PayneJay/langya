@@ -15,11 +15,11 @@ public class CustomDate implements Serializable {
     public int day;
     public int week;
 
-    public CustomDate(int year,int month,int day){
-        if(month > 12){
+    public CustomDate(int year, int month, int day) {
+        if (month > 12) {
             month = 1;
             year++;
-        }else if(month <1){
+        } else if (month < 1) {
             month = 12;
             year--;
         }
@@ -28,19 +28,20 @@ public class CustomDate implements Serializable {
         this.day = day;
     }
 
-    public CustomDate(){
+    public CustomDate() {
         this.year = DateUtil.getYear();
         this.month = DateUtil.getMonth();
         this.day = DateUtil.getCurrentMonthDay();
     }
 
-    public static CustomDate modifiDayForObject(CustomDate date,int day){
-        CustomDate modifiDate = new CustomDate(date.year,date.month,day);
+    public static CustomDate modifiDayForObject(CustomDate date, int day) {
+        CustomDate modifiDate = new CustomDate(date.year, date.month, day);
         return modifiDate;
     }
+
     @Override
     public String toString() {
-        return year+"-"+month+"-"+day;
+        return year + "-" + month + "-" + day;
     }
 
     public int getYear() {

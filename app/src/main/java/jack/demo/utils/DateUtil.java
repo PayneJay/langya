@@ -14,7 +14,7 @@ import jack.demo.model.CustomDate;
  * Created by weipengjie on 16/8/2.
  */
 public class DateUtil {
-    public static String[] weekName = { "周日", "周一", "周二", "周三", "周四", "周五","周六" };
+    public static String[] weekName = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
 
     public static int getMonthDays(int year, int month) {
         if (month > 12) {
@@ -24,7 +24,7 @@ public class DateUtil {
             month = 12;
             year -= 1;
         }
-        int[] arr = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        int[] arr = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int days = 0;
 
         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
@@ -59,15 +59,17 @@ public class DateUtil {
     public static int getHour() {
         return Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
     }
+
     public static int getMinute() {
         return Calendar.getInstance().get(Calendar.MINUTE);
     }
+
     public static CustomDate getNextSunday() {
 
         Calendar c = Calendar.getInstance();
-        c.add(Calendar.DATE, 7 - getWeekDay()+1);
+        c.add(Calendar.DATE, 7 - getWeekDay() + 1);
         CustomDate date = new CustomDate(c.get(Calendar.YEAR),
-                c.get(Calendar.MONTH)+1, c.get(Calendar.DAY_OF_MONTH));
+                c.get(Calendar.MONTH) + 1, c.get(Calendar.DAY_OF_MONTH));
         return date;
     }
 
@@ -79,7 +81,7 @@ public class DateUtil {
         c.set(Calendar.DAY_OF_MONTH, day);
         c.add(Calendar.DAY_OF_MONTH, pervious);
         time[0] = c.get(Calendar.YEAR);
-        time[1] = c.get(Calendar.MONTH )+1;
+        time[1] = c.get(Calendar.MONTH) + 1;
         time[2] = c.get(Calendar.DAY_OF_MONTH);
         return time;
 
@@ -108,14 +110,15 @@ public class DateUtil {
         }
         return date;
     }
-    public static boolean isToday(CustomDate date){
-        return(date.year == DateUtil.getYear() &&
+
+    public static boolean isToday(CustomDate date) {
+        return (date.year == DateUtil.getYear() &&
                 date.month == DateUtil.getMonth()
                 && date.day == DateUtil.getCurrentMonthDay());
     }
 
-    public static boolean isCurrentMonth(CustomDate date){
-        return(date.year == DateUtil.getYear() &&
+    public static boolean isCurrentMonth(CustomDate date) {
+        return (date.year == DateUtil.getYear() &&
                 date.month == DateUtil.getMonth());
     }
 }
