@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import jack.demo.R;
+import jack.demo.utils.DensityUtils;
 
 /**
  * Destriptions:
@@ -35,7 +36,7 @@ public class SinaSportLayout extends LinearLayout {
 
         ImageView imgLeft = new ImageView(context);
         imgLeft.setImageResource(R.drawable.sina_selector_left_btn);
-        int padding = px2dip(context, 30);
+        int padding = DensityUtils.px2dip(context, 30);
         imgLeft.setPadding(padding, padding, padding, padding);
         addView(imgLeft, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 
@@ -88,18 +89,6 @@ public class SinaSportLayout extends LinearLayout {
         set.setDuration(500);
         set.playTogether(animatorX, animatorY);
         set.start();
-    }
-
-    /**
-     * 像素转换成dp
-     *
-     * @param ctx
-     * @param pxValue
-     * @return
-     */
-    private int px2dip(Context ctx, float pxValue) {
-        float scale = ctx.getResources().getDisplayMetrics().density;
-        return (int) (pxValue / scale + 0.5f);
     }
 
     public void incrementLeftProgressValue(int value) {
