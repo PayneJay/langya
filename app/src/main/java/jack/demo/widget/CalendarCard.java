@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 
 import jack.demo.model.CustomDate;
-import jack.demo.utils.DateUtil;
+import jack.demo.utils.DateUtils;
 
 /**
  * Destriptions:
@@ -83,15 +83,15 @@ public class CalendarCard extends View {
     }
 
     private void fillDate() {
-        int monthDay = DateUtil.getCurrentMonthDay(); // 今天
-        int lastMonthDays = DateUtil.getMonthDays(mShowDate.year,
+        int monthDay = DateUtils.getCurrentMonthDay(); // 今天
+        int lastMonthDays = DateUtils.getMonthDays(mShowDate.year,
                 mShowDate.month - 1); // 上个月的天数
-        int currentMonthDays = DateUtil.getMonthDays(mShowDate.year,
+        int currentMonthDays = DateUtils.getMonthDays(mShowDate.year,
                 mShowDate.month); // 当前月的天数
-        int firstDayWeek = DateUtil.getWeekDayFromDate(mShowDate.year,
+        int firstDayWeek = DateUtils.getWeekDayFromDate(mShowDate.year,
                 mShowDate.month);
         boolean isCurrentMonth = false;
-        if (DateUtil.isCurrentMonth(mShowDate)) {
+        if (DateUtils.isCurrentMonth(mShowDate)) {
             isCurrentMonth = true;
         }
         int day = 0;

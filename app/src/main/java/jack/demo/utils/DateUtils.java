@@ -10,10 +10,10 @@ import java.util.Date;
 import jack.demo.model.CustomDate;
 
 /**
- * Destriptions:
+ * Destriptions:日期工具类
  * Created by weipengjie on 16/8/2.
  */
-public class DateUtil {
+public class DateUtils {
     public static String[] weekName = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
 
     public static int getMonthDays(int year, int month) {
@@ -112,13 +112,13 @@ public class DateUtil {
     }
 
     public static boolean isToday(CustomDate date) {
-        return (date.year == DateUtil.getYear() &&
-                date.month == DateUtil.getMonth()
-                && date.day == DateUtil.getCurrentMonthDay());
+        return (date.year == DateUtils.getYear() &&
+                date.month == DateUtils.getMonth()
+                && date.day == DateUtils.getCurrentMonthDay());
     }
 
     public static boolean isCurrentMonth(CustomDate date) {
-        return (date.year == DateUtil.getYear() &&
-                date.month == DateUtil.getMonth());
+        return (date.year == DateUtils.getYear() &&
+                date.month == DateUtils.getMonth());
     }
 }

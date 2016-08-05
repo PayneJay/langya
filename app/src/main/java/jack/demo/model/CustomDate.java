@@ -2,7 +2,7 @@ package jack.demo.model;
 
 import java.io.Serializable;
 
-import jack.demo.utils.DateUtil;
+import jack.demo.utils.DateUtils;
 
 /**
  * Destriptions:
@@ -29,9 +29,9 @@ public class CustomDate implements Serializable {
     }
 
     public CustomDate() {
-        this.year = DateUtil.getYear();
-        this.month = DateUtil.getMonth();
-        this.day = DateUtil.getCurrentMonthDay();
+        this.year = DateUtils.getYear();
+        this.month = DateUtils.getMonth();
+        this.day = DateUtils.getCurrentMonthDay();
     }
 
     public static CustomDate modifiDayForObject(CustomDate date, int day) {
