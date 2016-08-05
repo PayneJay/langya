@@ -18,6 +18,8 @@
 
         <activity android:name=".activity.MoreTextViewActivity"></activity>
         <activity android:name=".activity.CollapsedActivity"></activity>
+        <activity android:name=".activity.ProgressViewActivity"></activity>
+        <activity android:name=".activity.SinaSportProgressActivity"></activity>
     </application>
 
 </manifest>

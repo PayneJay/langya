@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="jack.demo.activity.MoreTextViewActivity">
+    tools:context=".activity.MoreTextViewActivity">
 
     <jack.demo.widget.MoreTextView
         android:id="@+id/mtv_text"
