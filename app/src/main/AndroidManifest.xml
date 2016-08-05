@@ -20,6 +20,10 @@
         <activity android:name=".activity.CollapsedActivity"></activity>
         <activity android:name=".activity.ProgressViewActivity"></activity>
         <activity android:name=".activity.SinaSportProgressActivity"></activity>
+        <activity android:name=".activity.FlexboxLayoutActivity"></activity>
+        <activity android:name=".activity.FlowLayoutActivity"></activity>
+        <activity android:name=".activity.ScrollTableViewActicity"></activity>
+        <activity android:name=".activity.CalendarActivity"></activity>
     </application>
 
 </manifest>

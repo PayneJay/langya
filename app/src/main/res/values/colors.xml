@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="bg_left_progress">#DD2F1C</color>
     <color name="bg_right_progress">#1D69E1</color>
+    <color name="white">#ffffff</color>
+    <color name="canlendar_text_color">#323232</color>
 </resources>
