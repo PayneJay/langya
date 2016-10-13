@@ -1,6 +1,5 @@
 package jack.demo.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -22,9 +21,10 @@ import java.util.Arrays;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
-public class MainActivity extends Activity {
+public class MainActivity extends JackBaseActivity {
     @InjectView(R.id.list)
     ListView list;
     private ArrayList<ActivityInfo> mActivities = null;
@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
                     mActivities.remove(i);
                 } else {
                     if (mActivities.get(i).name != null) {
-                        names.add(0, mActivities.get(i).name.toString());
+                        names.add(0, mActivities.get(i).name);
                     } else {
                         mActivities.remove(i);
                     }

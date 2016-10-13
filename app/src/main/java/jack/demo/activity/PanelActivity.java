@@ -1,15 +1,15 @@
 package jack.demo.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 
+import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
 /**
  * Destriptions:
  * Created by weipengjie on 16/8/5.
  */
-public class PanelActivity extends Activity {
+public class PanelActivity extends JackBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,15 +1,15 @@
 package jack.demo.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 
+import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.widget.CollapsedTextView;
 
 /**
  * Created by weipengjie on 16/7/15.
  */
-public class CollapsedActivity extends Activity {
+public class CollapsedActivity extends JackBaseActivity {
     private CollapsedTextView ctvView;
 
     @Override

@@ -1,15 +1,15 @@
 package jack.demo.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 
+import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.widget.MoreTextView;
 
 /**
  * Created by weipengjie on 16/7/15.
  */
-public class MoreTextViewActivity extends Activity {
+public class MoreTextViewActivity extends JackBaseActivity {
     private MoreTextView mtvText;
 
     @Override

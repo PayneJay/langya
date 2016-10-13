@@ -1,46 +1,50 @@
 package jack.demo.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.adapter.CalendarViewAdapter;
 import jack.demo.model.CustomDate;
 import jack.demo.widget.CalendarCard;
+import jack.demo.widget.CalendarCard.OnCellClickListener;
+
+import static jack.demo.activity.CalendarActivity.SildeDirection.NO_SILDE;
 
 /**
  * Destriptions:
  * Created by weipengjie on 16/8/2.
  */
-public class CalendarActivity extends Activity implements View.OnClickListener, CalendarCard.OnCellClickListener {
+public class CalendarActivity extends JackBaseActivity implements OnClickListener, OnCellClickListener {
+
     private ViewPager mViewPager;
-    private int mCurrentIndex = 498;
-    private CalendarCard[] mShowViews;
     private CalendarViewAdapter<CalendarCard> adapter;
-    private SildeDirection mDirection = SildeDirection.NO_SILDE;
+    private SildeDirection mDirection = NO_SILDE;
+    private TextView monthText;
+    private int mCurrentIndex = 498;
+
     enum SildeDirection {
         RIGHT, LEFT, NO_SILDE;
     }
 
-    private ImageButton preImgBtn, nextImgBtn;
-    private TextView monthText;
-    private ImageButton closeImgBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_calendar_layout);
+
         mViewPager = (ViewPager) this.findViewById(R.id.vp_calendar);
-        preImgBtn = (ImageButton) this.findViewById(R.id.btnPreMonth);
-        nextImgBtn = (ImageButton) this.findViewById(R.id.btnNextMonth);
         monthText = (TextView) this.findViewById(R.id.tvCurrentMonth);
-        closeImgBtn = (ImageButton) this.findViewById(R.id.btnClose);
+        ImageButton preImgBtn = (ImageButton) this.findViewById(R.id.btnPreMonth);
+        ImageButton nextImgBtn = (ImageButton) this.findViewById(R.id.btnNextMonth);
+        ImageButton closeImgBtn = (ImageButton) this.findViewById(R.id.btnClose);
         preImgBtn.setOnClickListener(this);
         nextImgBtn.setOnClickListener(this);
         closeImgBtn.setOnClickListener(this);
@@ -51,7 +55,6 @@ public class CalendarActivity extends Activity implements View.OnClickListener, 
         }
         adapter = new CalendarViewAdapter<>(views);
         setViewPager();
-
     }
 
     private void setViewPager() {
@@ -122,13 +125,13 @@ public class CalendarActivity extends Activity implements View.OnClickListener, 
 
     // 更新日历视图
     private void updateCalendarView(int arg0) {
-        mShowViews = adapter.getAllItems();
+        CalendarCard[] mShowViews = adapter.getAllItems();
         if (mDirection == SildeDirection.RIGHT) {
             mShowViews[arg0 % mShowViews.length].rightSlide();
         } else if (mDirection == SildeDirection.LEFT) {
             mShowViews[arg0 % mShowViews.length].leftSlide();
         }
-        mDirection = SildeDirection.NO_SILDE;
+        mDirection = NO_SILDE;
     }
 
 }
