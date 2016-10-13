@@ -24,6 +24,8 @@ import butterknife.InjectView;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
+import static android.content.pm.PackageManager.GET_ACTIVITIES;
+
 public class MainActivity extends JackBaseActivity {
     @InjectView(R.id.list)
     ListView list;
@@ -73,7 +75,7 @@ public class MainActivity extends JackBaseActivity {
     private void updateActivityInfos() {
         try {
             PackageInfo pi = getPackageManager().getPackageInfo("jack.demo",
-                    PackageManager.GET_ACTIVITIES);
+                    GET_ACTIVITIES);
             // 获取所有Activity信息
             mActivities = new ArrayList<>(
                     Arrays.asList(pi.activities));
