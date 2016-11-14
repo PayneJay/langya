@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hotchpotch_submit_btn">提交</string>
+    <string name="action_sign_in">登录</string>
+    <string name="prompt_email">请输入邮箱</string>
+    <string name="prompt_password">请输入密码</string>
+    <string name="action_sign_in_short">action_sign_in_short</string>
+    <string name="hotchpotch_name_tv">姓名</string>
+    <string name="hotchpotch_phone_tv">手机号</string>
+    <string name="hotchpotch_mail_tv">邮箱</string>
+    <string name="hotchpotch_password_tv">留存密码</string>
+    <string name="hotchpotch_feedback_tv">反馈建议</string>
+</resources>

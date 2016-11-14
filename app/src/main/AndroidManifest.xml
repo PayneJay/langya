@@ -36,15 +36,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.MoreTextViewActivity"></activity>
-        <activity android:name=".activity.CollapsedActivity"></activity>
-        <activity android:name=".activity.ProgressViewActivity"></activity>
-        <activity android:name=".activity.SinaSportProgressActivity"></activity>
-        <activity android:name=".activity.FlexboxLayoutActivity"></activity>
-        <activity android:name=".activity.FlowLayoutActivity"></activity>
-        <activity android:name=".activity.ScrollTableViewActicity"></activity>
-        <activity android:name=".activity.CalendarActivity"></activity>
-        <activity android:name=".activity.PanelActivity"></activity>
+        <activity android:name=".activity.MoreTextViewActivity"/>
+        <activity android:name=".activity.CollapsedActivity"/>
+        <activity android:name=".activity.ProgressViewActivity"/>
+        <activity android:name=".activity.SinaSportProgressActivity"/>
+        <activity android:name=".activity.FlexboxLayoutActivity"/>
+        <activity android:name=".activity.FlowLayoutActivity"/>
+        <activity android:name=".activity.ScrollTableViewActicity"/>
+        <activity android:name=".activity.CalendarActivity"/>
+        <activity android:name=".activity.PanelActivity"/>
+        <activity android:name=".activity.HotchpotchActivity"/>
+        <activity android:name=".activity.LoginActivity"/>
 
 
         <!-- APP项目的其它配置... -->
