@@ -6,6 +6,10 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="dateStyle">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">fill_parent</item>
@@ -21,7 +25,7 @@
     </style>
 
     <style name="FloatingStyle" parent="@android:style/TextAppearance">
-        <item name="android:textColor">#FFEB3B</item>
+        <item name="android:textColor">#BB1111</item>
         <item name="android:textSize">20sp</item>
     </style>
 
