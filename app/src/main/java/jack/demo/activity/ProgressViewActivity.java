@@ -11,7 +11,9 @@ import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.utils.ProgressHandler;
 import jack.demo.utils.ProgressHandler.Progress;
+import jack.demo.utils.ToastUtils;
 import jack.demo.widget.ProgressBarView;
+import jack.demo.widget.RemoteControlMenu;
 
 import static android.widget.Toast.LENGTH_SHORT;
 import static android.widget.Toast.makeText;
@@ -36,6 +38,8 @@ public class ProgressViewActivity extends JackBaseActivity {
     ProgressBarView progressBarView2;
     @InjectView(R.id.img_download_status)
     ImageView imgDownLoad;
+    @InjectView(R.id.rcMenu)
+    RemoteControlMenu rcMenu;
 
     private ProgressHandler progressHandler = new ProgressHandler();
 
@@ -50,16 +54,7 @@ public class ProgressViewActivity extends JackBaseActivity {
         assert progressBarView1 != null;
         assert progressBarView2 != null;
 
-        progressBarView.setPercent(false);
-        progressBarView.setStyle(FILL);
-
-        progressBarView1.setPercent(true);
-        progressBarView1.setStyle(STROKE);
-        progressBarView1.setTextColor(getResources().getColor(R.color.colorPrimary));
-
-
-        progressBarView2.setPercent(false);
-        progressBarView2.setStyle(STROKE);
+        initView();
 
         progressHandler.setProgress(new Progress() {
             @Override
@@ -79,11 +74,56 @@ public class ProgressViewActivity extends JackBaseActivity {
         });
     }
 
+    private void initView() {
+        progressBarView.setPercent(false);
+        progressBarView.setStyle(FILL);
+
+        progressBarView1.setPercent(true);
+        progressBarView1.setStyle(STROKE);
+        progressBarView1.setTextColor(getResources().getColor(R.color.colorPrimary));
+
+
+        progressBarView2.setPercent(false);
+        progressBarView2.setStyle(STROKE);
+
+        RemoteControlMenu.MenuListener menuListener = new RemoteControlMenu.MenuListener() {
+            @Override
+            public void onCenterClicked() {
+                // TODO: 2016/11/16 点击中间菜单
+                ToastUtils.showShort(ProgressViewActivity.this, "菜单中间");
+            }
+
+            @Override
+            public void onUpClicked() {
+                // TODO: 2016/11/16 点击菜单上
+                ToastUtils.showShort(ProgressViewActivity.this, "菜单上");
+            }
+
+            @Override
+            public void onRightClicked() {
+                // TODO: 2016/11/16 点击右菜单
+                ToastUtils.showShort(ProgressViewActivity.this, "菜单右");
+            }
+
+            @Override
+            public void onDownClicked() {
+                // TODO: 2016/11/16 点击菜单下
+                ToastUtils.showShort(ProgressViewActivity.this, "菜单下");
+            }
+
+            @Override
+            public void onLeftClicked() {
+                // TODO: 2016/11/16 点击左侧菜单
+                ToastUtils.showShort(ProgressViewActivity.this, "菜单左");
+            }
+        };
+        rcMenu.setListener(menuListener);
+    }
+
     @OnClick(R.id.btn)
     public void onClick() {
         progressHandler.sendEmptyMessageDelayed(UPDATE, TIME);
         imgDownLoad.setImageResource(R.drawable.icon_down);
     }
-
 
 }

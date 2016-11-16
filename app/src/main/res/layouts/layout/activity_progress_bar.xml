@@ -13,11 +13,11 @@
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:paddingBottom="@dimen/button_padding_top_bottom"
         android:paddingLeft="@dimen/button_padding_left_right"
         android:paddingRight="@dimen/button_padding_left_right"
         android:paddingTop="@dimen/button_padding_top_bottom"
-        android:paddingBottom="@dimen/button_padding_top_bottom"
-        android:background="@drawable/button_style"
         android:text="@string/download" />
 
     <jack.demo.widget.ProgressBarView
@@ -47,15 +47,21 @@
             android:id="@+id/view2"
             android:layout_width="@dimen/progress_bar_width"
             android:layout_height="@dimen/progress_bar_height"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true" />
 
         <ImageView
             android:id="@+id/img_download_status"
             android:layout_width="@dimen/image_view_width"
             android:layout_height="@dimen/image_view_height"
             android:layout_centerInParent="true"
-            android:src="@drawable/icon_down"/>
+            android:src="@drawable/icon_down" />
     </RelativeLayout>
+
+    <jack.demo.widget.RemoteControlMenu
+        android:id="@+id/rcMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
 
 
 </RelativeLayout>
