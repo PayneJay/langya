@@ -76,7 +76,7 @@ public class RemoteControlMenu extends CustomView {
         int sr = minWidth / 4;
         RectF smallCircle = new RectF(-sr, -sr, sr, sr);
 
-        float bigSweepAngle = 84;
+        float bigSweepAngle = 80;
         float smallSweepAngle = -80;
 
         // 根据视图大小，初始化 Path 和 Region
