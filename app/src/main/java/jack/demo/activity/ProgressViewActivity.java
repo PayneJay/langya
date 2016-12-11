@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
@@ -28,17 +28,17 @@ import static jack.demo.widget.ProgressBarView.STROKE;
  */
 public class ProgressViewActivity extends JackBaseActivity {
 
-    @InjectView(R.id.btn)
+    @Bind(R.id.btn)
     Button btnDownload;
-    @InjectView(R.id.view)
+    @Bind(R.id.view)
     ProgressBarView progressBarView;
-    @InjectView(R.id.view1)
+    @Bind(R.id.view1)
     ProgressBarView progressBarView1;
-    @InjectView(R.id.view2)
+    @Bind(R.id.view2)
     ProgressBarView progressBarView2;
-    @InjectView(R.id.img_download_status)
+    @Bind(R.id.img_download_status)
     ImageView imgDownLoad;
-    @InjectView(R.id.rcMenu)
+    @Bind(R.id.rcMenu)
     RemoteControlMenu rcMenu;
 
     private ProgressHandler progressHandler = new ProgressHandler();
@@ -47,7 +47,7 @@ public class ProgressViewActivity extends JackBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress_bar);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         assert btnDownload != null;
         assert progressBarView != null;

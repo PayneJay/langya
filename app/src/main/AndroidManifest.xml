@@ -36,17 +36,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.MoreTextViewActivity"/>
-        <activity android:name=".activity.CollapsedActivity"/>
-        <activity android:name=".activity.ProgressViewActivity"/>
-        <activity android:name=".activity.SinaSportProgressActivity"/>
-        <activity android:name=".activity.FlexboxLayoutActivity"/>
-        <activity android:name=".activity.FlowLayoutActivity"/>
-        <activity android:name=".activity.ScrollTableViewActicity"/>
-        <activity android:name=".activity.CalendarActivity"/>
-        <activity android:name=".activity.PanelActivity"/>
-        <activity android:name=".activity.HotchpotchActivity"/>
-        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.MoreTextViewActivity" />
+        <activity android:name=".activity.CollapsedActivity" />
+        <activity android:name=".activity.ProgressViewActivity" />
+        <activity android:name=".activity.SinaSportProgressActivity" />
+        <activity android:name=".activity.FlexboxLayoutActivity" />
+        <activity android:name=".activity.FlowLayoutActivity" />
+        <activity android:name=".activity.ScrollTableViewActicity" />
+        <activity android:name=".activity.CalendarActivity" />
+        <activity android:name=".activity.PanelActivity" />
+        <activity android:name=".activity.HotchpotchActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.PokerOverturnActivity" />
 
 
         <!-- APP项目的其它配置... -->
@@ -54,8 +55,8 @@
         <!-- 【必须】 信鸽receiver广播接收 -->
         <receiver
             android:name="com.tencent.android.tpush.XGPushReceiver"
-            android:process=":xg_service_v2" >
-            <intent-filter android:priority="0x7fffffff" >
+            android:process=":xg_service_v2">
+            <intent-filter android:priority="0x7fffffff">
                 <!-- 【必须】 信鸽SDK的内部广播 -->
                 <action android:name="com.tencent.android.tpush.action.SDK" />
                 <action android:name="com.tencent.android.tpush.action.INTERNAL_PUSH_MESSAGE" />
@@ -74,7 +75,7 @@
         <!-- 【注意】 如果被打开的activity是启动模式为SingleTop，SingleTask或SingleInstance，请根据通知的异常自查列表第8点处理-->
         <activity
             android:name="com.tencent.android.tpush.XGPushActivity"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <!-- 若使用AndroidStudio，请设置android:name="android.intent.action"-->
                 <action android:name="android.intent.action" />
@@ -91,7 +92,7 @@
         <!-- 【必须】 通知service，此选项有助于提高抵达率 -->
         <service
             android:name="com.tencent.android.tpush.rpc.XGRemoteService"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="jack.demo.PUSH_ACTION" />
             </intent-filter>

@@ -19,15 +19,15 @@ import com.tencent.android.tpush.XGPushManager;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
 import static android.content.pm.PackageManager.GET_ACTIVITIES;
 
 public class MainActivity extends JackBaseActivity {
-    @InjectView(R.id.list)
+    @Bind(R.id.list)
     ListView list;
     private ArrayList<ActivityInfo> mActivities = null;
 
@@ -35,7 +35,7 @@ public class MainActivity extends JackBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         registerXGPush();
 
         updateActivityInfos();

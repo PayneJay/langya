@@ -19,7 +19,7 @@ public class FlowLayout extends ViewGroup {
     private class ChildPos {
         int left, top, right, bottom;
 
-        public ChildPos(int left, int top, int right, int bottom) {
+        ChildPos(int left, int top, int right, int bottom) {
             this.left = left;
             this.top = top;
             this.right = right;
