@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/activity_header_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_bar_height"
         android:background="@color/colorPrimaryDark"
@@ -23,10 +24,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
+            android:fontFamily="cursive"
             android:gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="30sp"
             android:textStyle="bold|italic" />
 
         <ImageView
@@ -38,5 +40,11 @@
             android:src="@drawable/icon_top_right_save"
             android:visibility="invisible" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/activity_header_layout"></FrameLayout>
 
 </RelativeLayout>

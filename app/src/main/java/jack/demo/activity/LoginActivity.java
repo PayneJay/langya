@@ -2,7 +2,6 @@ package jack.demo.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.view.KeyEvent;
 import android.view.View;
@@ -29,10 +28,7 @@ public class LoginActivity extends JackBaseActivity {
     private ProgressDialog mProgressDialog;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_layout);
-
+    protected void init() {
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         mPasswordView = (TextInputEditText) findViewById(R.id.password);
 
@@ -56,6 +52,11 @@ public class LoginActivity extends JackBaseActivity {
                 attemptLogin();
             }
         });
+    }
+
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_login_layout;
     }
 
     /**

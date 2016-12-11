@@ -1,7 +1,5 @@
 package jack.demo.activity;
 
-import android.os.Bundle;
-
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.widget.MoreTextView;
@@ -13,10 +11,13 @@ public class MoreTextViewActivity extends JackBaseActivity {
     private MoreTextView mtvText;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_more);
+    protected void init() {
         mtvText = (MoreTextView) findViewById(R.id.mtv_text);
         mtvText.setText(getString(R.string.full_text));
+    }
+
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_more;
     }
 }

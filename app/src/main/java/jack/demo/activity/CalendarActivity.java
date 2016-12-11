@@ -1,13 +1,11 @@
 package jack.demo.activity;
 
-import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.OnClick;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.adapter.CalendarViewAdapter;
@@ -21,40 +19,47 @@ import static jack.demo.activity.CalendarActivity.SildeDirection.NO_SILDE;
  * Destriptions:
  * Created by weipengjie on 16/8/2.
  */
-public class CalendarActivity extends JackBaseActivity implements OnClickListener, OnCellClickListener {
+public class CalendarActivity extends JackBaseActivity implements OnCellClickListener {
+    @Bind(R.id.vp_calendar)
+    ViewPager mViewPager;
+    @Bind(R.id.tvCurrentMonth)
+    TextView monthText;
+    @Bind(R.id.btnPreMonth)
+    ImageButton preImgBtn;
+    @Bind(R.id.btnNextMonth)
+    ImageButton nextImgBtn;
 
-    private ViewPager mViewPager;
     private CalendarViewAdapter<CalendarCard> adapter;
     private SildeDirection mDirection = NO_SILDE;
-    private TextView monthText;
     private int mCurrentIndex = 498;
 
     enum SildeDirection {
         RIGHT, LEFT, NO_SILDE;
     }
 
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_calendar_layout);
-
-        mViewPager = (ViewPager) this.findViewById(R.id.vp_calendar);
-        monthText = (TextView) this.findViewById(R.id.tvCurrentMonth);
-        ImageButton preImgBtn = (ImageButton) this.findViewById(R.id.btnPreMonth);
-        ImageButton nextImgBtn = (ImageButton) this.findViewById(R.id.btnNextMonth);
-        ImageButton closeImgBtn = (ImageButton) this.findViewById(R.id.btnClose);
-        preImgBtn.setOnClickListener(this);
-        nextImgBtn.setOnClickListener(this);
-        closeImgBtn.setOnClickListener(this);
-
+    protected void init() {
         CalendarCard[] views = new CalendarCard[3];
         for (int i = 0; i < 3; i++) {
             views[i] = new CalendarCard(this, this);
         }
         adapter = new CalendarViewAdapter<>(views);
         setViewPager();
+    }
+
+    @OnClick(R.id.btnPreMonth)
+    void onPreMonthClicked() {
+        mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1);
+    }
+
+    @OnClick(R.id.btnNextMonth)
+    void onNextMonthClicked() {
+        mViewPager.setCurrentItem(mViewPager.getCurrentItem() + 1);
+    }
+
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_calendar_layout;
     }
 
     private void setViewPager() {
@@ -78,23 +83,6 @@ public class CalendarActivity extends JackBaseActivity implements OnClickListene
 
             }
         });
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnPreMonth:
-                mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1);
-                break;
-            case R.id.btnNextMonth:
-                mViewPager.setCurrentItem(mViewPager.getCurrentItem() + 1);
-                break;
-            case R.id.btnClose:
-                finish();
-                break;
-            default:
-                break;
-        }
     }
 
     @Override

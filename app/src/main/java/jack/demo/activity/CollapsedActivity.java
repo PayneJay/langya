@@ -1,7 +1,6 @@
 package jack.demo.activity;
 
-import android.os.Bundle;
-
+import butterknife.Bind;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.widget.CollapsedTextView;
@@ -10,14 +9,16 @@ import jack.demo.widget.CollapsedTextView;
  * Created by weipengjie on 16/7/15.
  */
 public class CollapsedActivity extends JackBaseActivity {
-    private CollapsedTextView ctvView;
+    @Bind(R.id.ctv_view)
+    CollapsedTextView ctvView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collapsed);
-        ctvView = (CollapsedTextView) findViewById(R.id.ctv_view);
+    protected void init() {
         ctvView.setShowText(getString(R.string.full_text));
+    }
 
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_collapsed;
     }
 }

@@ -2,7 +2,6 @@ package jack.demo.activity;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +23,8 @@ import static android.widget.Toast.makeText;
 public class ScrollTableViewActicity extends JackBaseActivity {
     private final static int COLUMN_CNT = 45; //显示多少列，这个要和layout文件里面对应起来
 
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.scroll_table_layout);
+    @Override
+    protected void init() {
         GridView dataGridView = (GridView) findViewById(R.id.data_gridview);
         dataGridView.setNumColumns(COLUMN_CNT);//一共45列
 
@@ -38,8 +35,12 @@ public class ScrollTableViewActicity extends JackBaseActivity {
                 makeText(ScrollTableViewActicity.this, "" + position, LENGTH_SHORT).show();
             }
         });
+    }
 
-    } //end onCreate
+    @Override
+    protected int getContentView() {
+        return R.layout.scroll_table_layout;
+    }
 
     class CellAdapter extends BaseAdapter {
         private LayoutInflater mInflater;

@@ -37,15 +37,6 @@
             android:text="11月"
             android:textColor="#323232"
             android:textSize="22sp" />
-
-        <ImageButton
-            android:id="@+id/btnClose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/ic_close" />
     </RelativeLayout>
 
     <LinearLayout

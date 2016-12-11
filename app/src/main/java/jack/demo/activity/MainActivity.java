@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
@@ -32,12 +30,9 @@ public class MainActivity extends JackBaseActivity {
     private ArrayList<ActivityInfo> mActivities = null;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+    protected void init() {
+        ivTopBack.setVisibility(View.INVISIBLE);
         registerXGPush();
-
         updateActivityInfos();
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -47,6 +42,11 @@ public class MainActivity extends JackBaseActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_main;
     }
 
     /**

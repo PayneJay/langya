@@ -1,13 +1,11 @@
 package jack.demo.activity;
 
-import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
@@ -27,12 +25,13 @@ public class PokerOverturnActivity extends JackBaseActivity {
     private boolean bool;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_poker_overturn);
-        ButterKnife.bind(this);
-
+    protected void init() {
         ivPoker.setOnClickListener(new ImgViewListener());
+    }
+
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_poker_overturn;
     }
 
     class ImgViewListener implements View.OnClickListener {

@@ -1,11 +1,9 @@
 package jack.demo.activity;
 
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
@@ -42,37 +40,6 @@ public class ProgressViewActivity extends JackBaseActivity {
     RemoteControlMenu rcMenu;
 
     private ProgressHandler progressHandler = new ProgressHandler();
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_progress_bar);
-        ButterKnife.bind(this);
-
-        assert btnDownload != null;
-        assert progressBarView != null;
-        assert progressBarView1 != null;
-        assert progressBarView2 != null;
-
-        initView();
-
-        progressHandler.setProgress(new Progress() {
-            @Override
-            public void setSchedule(int schedule) {
-                progressBarView.setCurrentProgress(schedule);
-                progressBarView.setCurrentProgressColor(getResources().getColor(R.color.colorAccent));
-                progressBarView1.setCurrentProgress(schedule);
-                progressBarView1.setCurrentProgressColor(getResources().getColor(R.color.colorPrimary));
-                progressBarView2.setCurrentProgress(schedule);
-            }
-
-            @Override
-            public void onSuccess() {
-                imgDownLoad.setImageResource(R.drawable.icon_ok);
-                makeText(ProgressViewActivity.this, getString(R.string.download_success), LENGTH_SHORT).show();
-            }
-        });
-    }
 
     private void initView() {
         progressBarView.setPercent(false);
@@ -118,6 +85,38 @@ public class ProgressViewActivity extends JackBaseActivity {
             }
         };
         rcMenu.setListener(menuListener);
+    }
+
+    @Override
+    protected void init() {
+        assert btnDownload != null;
+        assert progressBarView != null;
+        assert progressBarView1 != null;
+        assert progressBarView2 != null;
+
+        initView();
+
+        progressHandler.setProgress(new Progress() {
+            @Override
+            public void setSchedule(int schedule) {
+                progressBarView.setCurrentProgress(schedule);
+                progressBarView.setCurrentProgressColor(getResources().getColor(R.color.colorAccent));
+                progressBarView1.setCurrentProgress(schedule);
+                progressBarView1.setCurrentProgressColor(getResources().getColor(R.color.colorPrimary));
+                progressBarView2.setCurrentProgress(schedule);
+            }
+
+            @Override
+            public void onSuccess() {
+                imgDownLoad.setImageResource(R.drawable.icon_ok);
+                makeText(ProgressViewActivity.this, getString(R.string.download_success), LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_progress_bar;
     }
 
     @OnClick(R.id.btn)

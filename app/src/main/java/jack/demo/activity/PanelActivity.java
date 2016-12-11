@@ -1,7 +1,5 @@
 package jack.demo.activity;
 
-import android.os.Bundle;
-
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
@@ -10,9 +8,14 @@ import jack.demo.R;
  * Created by weipengjie on 16/8/5.
  */
 public class PanelActivity extends JackBaseActivity {
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_panel_layout);
+    protected void init() {
+
+    }
+
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_panel_layout;
     }
 }

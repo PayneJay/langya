@@ -1,6 +1,5 @@
 package jack.demo.activity;
 
-import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.view.View;
 import android.widget.Button;
@@ -29,14 +28,7 @@ public class HotchpotchActivity extends JackBaseActivity {
     private String mContentFeedback;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_textinput_layout);
-
-        initView();
-    }
-
-    private void initView() {
+    protected void init() {
         mNameEditx = (TextInputEditText) findViewById(R.id.edit_name);
         mPhoneEditx = (TextInputEditText) findViewById(R.id.edit_phone);
         mEmailEditx = (TextInputEditText) findViewById(R.id.edit_email);
@@ -50,6 +42,11 @@ public class HotchpotchActivity extends JackBaseActivity {
                 controlAction();
             }
         });
+    }
+
+    @Override
+    protected int getContentView() {
+        return R.layout.activity_textinput_layout;
     }
 
     private void getContent() {
