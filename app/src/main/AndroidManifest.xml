@@ -48,6 +48,7 @@
         <activity android:name=".activity.HotchpotchActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.PokerOverturnActivity" />
+        <activity android:name=".activity.ObservableListViewTestActivity" />
 
 
         <!-- APP项目的其它配置... -->

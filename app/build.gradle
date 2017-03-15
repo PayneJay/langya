@@ -27,6 +27,10 @@ android {
         }
     }
 
+    repositories {
+        mavenCentral()
+    }
+    
     sourceSets {
         main {
             res.srcDirs =
@@ -63,4 +67,5 @@ dependencies {
     compile files('libs/wup-1.0.0.E-SNAPSHOT.jar')
     compile files('libs/Xg_sdk_v2.46_20160602_1638.jar')
     compile 'com.android.support:design:24.2.1'
+    compile 'com.github.ksoichiro:android-observablescrollview:1.5.0'
 }

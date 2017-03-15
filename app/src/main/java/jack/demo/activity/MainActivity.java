@@ -9,8 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
+import com.github.ksoichiro.android.observablescrollview.ObservableListView;
 import com.tencent.android.tpush.XGIOperateCallback;
 import com.tencent.android.tpush.XGPushConfig;
 import com.tencent.android.tpush.XGPushManager;
@@ -25,8 +25,8 @@ import jack.demo.R;
 import static android.content.pm.PackageManager.GET_ACTIVITIES;
 
 public class MainActivity extends JackBaseActivity {
-    @Bind(R.id.list)
-    ListView list;
+    @Bind(R.id.observable_listview)
+    ObservableListView list;
     private ArrayList<ActivityInfo> mActivities = null;
 
     @Override
