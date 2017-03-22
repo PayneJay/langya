@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
@@ -26,10 +26,10 @@ public class FlowLayoutActivity extends JackBaseActivity {
     //标签名称
     private String mTvNames[] = {"动漫", "钉宫理惠", "灼眼的夏娜", "绯弹的亚里亚", "零之使魔", "夕阳染红的街道"};
     //流式布局
-    @Bind(R.id.flow_layout)
+    @BindView(R.id.flow_layout)
     FlowLayout mFlowLayout;
     //接收新添加TextView的名称
-    @Bind(R.id.edit)
+    @BindView(R.id.edit)
     EditText mEdit;
 
     @Override

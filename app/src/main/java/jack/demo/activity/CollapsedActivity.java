@@ -1,6 +1,6 @@
 package jack.demo.activity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.widget.CollapsedTextView;
@@ -9,7 +9,7 @@ import jack.demo.widget.CollapsedTextView;
  * Created by weipengjie on 16/7/15.
  */
 public class CollapsedActivity extends JackBaseActivity {
-    @Bind(R.id.ctv_view)
+    @BindView(R.id.ctv_view)
     CollapsedTextView ctvView;
 
     @Override

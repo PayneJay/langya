@@ -12,12 +12,9 @@ import android.widget.TextView;
 import com.tencent.android.tpush.XGPushClickedResult;
 import com.tencent.android.tpush.XGPushManager;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
+import butterknife.BindView;
 import butterknife.OnClick;
 import jack.demo.activity.ProgressViewActivity;
-
-import static jack.demo.R.id.iv_top_save;
 
 /**
  * Destriptions:Activity基类
@@ -25,11 +22,11 @@ import static jack.demo.R.id.iv_top_save;
  */
 
 public abstract class JackBaseActivity extends Activity {
-    @Bind(R.id.iv_top_back)
+    @BindView(R.id.iv_top_back)
     protected ImageView ivTopBack;
-    @Bind(R.id.tv_top_title)
+    @BindView(R.id.tv_top_title)
     protected TextView tvTopTitle;
-    @Bind(iv_top_save)
+    @BindView(R.id.iv_top_save)
     protected ImageView ivTopSave;
 
     private FrameLayout rootView;
@@ -48,7 +45,7 @@ public abstract class JackBaseActivity extends Activity {
                 android.view.ViewGroup.LayoutParams.MATCH_PARENT);
         View mView = LayoutInflater.from(this).inflate(getContentView(), null);
         rootView.addView(mView, params);
-        ButterKnife.bind(this);
+
         init();
     }
 

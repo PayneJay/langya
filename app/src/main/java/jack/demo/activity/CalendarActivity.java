@@ -4,7 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
@@ -20,13 +20,13 @@ import static jack.demo.activity.CalendarActivity.SildeDirection.NO_SILDE;
  * Created by weipengjie on 16/8/2.
  */
 public class CalendarActivity extends JackBaseActivity implements OnCellClickListener {
-    @Bind(R.id.vp_calendar)
+    @BindView(R.id.vp_calendar)
     ViewPager mViewPager;
-    @Bind(R.id.tvCurrentMonth)
+    @BindView(R.id.tvCurrentMonth)
     TextView monthText;
-    @Bind(R.id.btnPreMonth)
+    @BindView(R.id.btnPreMonth)
     ImageButton preImgBtn;
-    @Bind(R.id.btnNextMonth)
+    @BindView(R.id.btnNextMonth)
     ImageButton nextImgBtn;
 
     private CalendarViewAdapter<CalendarCard> adapter;

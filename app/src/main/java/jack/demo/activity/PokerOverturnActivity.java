@@ -5,7 +5,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
@@ -19,9 +19,9 @@ import jack.demo.R;
  */
 
 public class PokerOverturnActivity extends JackBaseActivity {
-    @Bind(R.id.iv_poker)
-    ImageView ivPoker;
 
+    @BindView(R.id.iv_poker)
+    ImageView ivPoker;
     private boolean bool;
 
     @Override

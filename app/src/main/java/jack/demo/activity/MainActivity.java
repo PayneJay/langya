@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,14 +19,15 @@ import com.tencent.android.tpush.XGPushManager;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import butterknife.Bind;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
 import static android.content.pm.PackageManager.GET_ACTIVITIES;
 
 public class MainActivity extends JackBaseActivity {
-    @Bind(R.id.observable_listview)
+    @BindView(R.id.observable_listview)
     ObservableListView list;
     private ArrayList<ActivityInfo> mActivities = null;
 
@@ -103,5 +105,12 @@ public class MainActivity extends JackBaseActivity {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

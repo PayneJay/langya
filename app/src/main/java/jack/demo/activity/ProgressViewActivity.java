@@ -3,7 +3,7 @@ package jack.demo.activity;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
@@ -26,17 +26,17 @@ import static jack.demo.widget.ProgressBarView.STROKE;
  */
 public class ProgressViewActivity extends JackBaseActivity {
 
-    @Bind(R.id.btn)
+    @BindView(R.id.btn)
     Button btnDownload;
-    @Bind(R.id.view)
+    @BindView(R.id.view)
     ProgressBarView progressBarView;
-    @Bind(R.id.view1)
+    @BindView(R.id.view1)
     ProgressBarView progressBarView1;
-    @Bind(R.id.view2)
+    @BindView(R.id.view2)
     ProgressBarView progressBarView2;
-    @Bind(R.id.img_download_status)
+    @BindView(R.id.img_download_status)
     ImageView imgDownLoad;
-    @Bind(R.id.rcMenu)
+    @BindView(R.id.rcMenu)
     RemoteControlMenu rcMenu;
 
     private ProgressHandler progressHandler = new ProgressHandler();

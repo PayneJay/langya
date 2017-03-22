@@ -12,7 +12,7 @@ import com.github.ksoichiro.android.observablescrollview.ScrollState;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import jack.demo.R;
 import jack.demo.utils.LogUtils;
@@ -27,7 +27,7 @@ import jack.demo.utils.LogUtils;
  */
 
 public class ObservableListViewTestActivity extends AppCompatActivity implements ObservableScrollViewCallbacks {
-    @Bind(R.id.observable_listview)
+    @BindView(R.id.observable_listview)
     ObservableListView observableListview;
 
     @Override
@@ -36,7 +36,6 @@ public class ObservableListViewTestActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_observable_listview_test);
         ButterKnife.bind(this);
         observableListview.setScrollViewCallbacks(this);
-
 
         // Add these codes after ListView initialization
         ArrayList<String> items = new ArrayList<>();
