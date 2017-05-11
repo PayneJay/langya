@@ -38,13 +38,13 @@
 
     <!--仿新浪体育点赞进度条-->
     <declare-styleable name="RatioProgressBar">
-        <attr name="left_progress_value" format="integer"/>
-        <attr name="left_progress_bg" format="color"/>
-        <attr name="right_progress_value" format="integer"/>
-        <attr name="right_progress_bg" format="color"/>
-        <attr name="left_right_progress_spacing" format="integer"/>
-        <attr name="progress_anim_duration" format="integer"/>
-        <attr name="progress_height" format="dimension"/>
+        <attr name="left_progress_value" format="integer" />
+        <attr name="left_progress_bg" format="color" />
+        <attr name="right_progress_value" format="integer" />
+        <attr name="right_progress_bg" format="color" />
+        <attr name="left_right_progress_spacing" format="integer" />
+        <attr name="progress_anim_duration" format="integer" />
+        <attr name="progress_height" format="dimension" />
     </declare-styleable>
 
     <!--自定义抽屉控件-->
@@ -74,5 +74,29 @@
         <attr name="openedHandle" format="reference|color" />
         <!-- Defines closed handle (drawable/color). -->
         <attr name="closedHandle" format="reference|color" />
+    </declare-styleable>
+
+    <!--带非空校验的自定义EditText-->
+    <declare-styleable name="HunterEditText">
+        <attr name="isRequired" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressImageView">
+        <!--图片圆角大小-->
+        <attr name="roundPixel" format="dimension|reference" />
+        <!--是否启用进度-->
+        <attr name="useProgress" format="boolean" />
+        <!--进度阴影色值-->
+        <attr name="roundShadowColor" format="color|reference" />
+        <!--进度文字大小-->
+        <attr name="roundProgressTextSize" format="dimension|reference" />
+        <!--进度文字颜色-->
+        <attr name="roundProgressTextColor" format="color|reference" />
+        <!--圆环进度的宽-->
+        <attr name="roundProgressWidth" format="integer" />
+        <!--圆环进度的高-->
+        <attr name="roundProgressHeight" format="integer" />
+        <!--进度大小-->
+        <attr name="progressMax" format="integer" />
     </declare-styleable>
 </resources>

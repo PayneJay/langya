@@ -63,5 +63,12 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
+    <jack.demo.widget.CirclePercentImageView
+        android:id="@+id/circle_percent_view"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/booking"
+        android:layout_alignParentBottom="true" />
+
 
 </RelativeLayout>

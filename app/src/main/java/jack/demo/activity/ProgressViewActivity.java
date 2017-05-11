@@ -10,6 +10,7 @@ import jack.demo.R;
 import jack.demo.utils.ProgressHandler;
 import jack.demo.utils.ProgressHandler.Progress;
 import jack.demo.utils.ToastUtils;
+import jack.demo.widget.CirclePercentImageView;
 import jack.demo.widget.ProgressBarView;
 import jack.demo.widget.RemoteControlMenu;
 
@@ -36,6 +37,8 @@ public class ProgressViewActivity extends JackBaseActivity {
     ProgressBarView progressBarView2;
     @BindView(R.id.img_download_status)
     ImageView imgDownLoad;
+    @BindView(R.id.circle_percent_view)
+    CirclePercentImageView circleImageView;
     @BindView(R.id.rcMenu)
     RemoteControlMenu rcMenu;
 
@@ -93,6 +96,7 @@ public class ProgressViewActivity extends JackBaseActivity {
         assert progressBarView != null;
         assert progressBarView1 != null;
         assert progressBarView2 != null;
+        assert circleImageView != null;
 
         initView();
 
@@ -104,6 +108,7 @@ public class ProgressViewActivity extends JackBaseActivity {
                 progressBarView1.setCurrentProgress(schedule);
                 progressBarView1.setCurrentProgressColor(getResources().getColor(R.color.colorPrimary));
                 progressBarView2.setCurrentProgress(schedule);
+                circleImageView.setProgress(schedule);
             }
 
             @Override

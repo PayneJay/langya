@@ -2,14 +2,15 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId "jack.demo"
         minSdkVersion 14
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -30,7 +31,7 @@ android {
     repositories {
         mavenCentral()
     }
-    
+
     sourceSets {
         main {
             res.srcDirs =
@@ -68,4 +69,5 @@ dependencies {
     compile files('libs/Xg_sdk_v2.46_20160602_1638.jar')
     compile 'com.android.support:design:24.2.1'
     compile 'com.github.ksoichiro:android-observablescrollview:1.5.0'
+    compile 'com.android.support:multidex:1.0.1'
 }
