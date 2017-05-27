@@ -10,4 +10,5 @@
     <string name="hotchpotch_mail_tv">邮箱</string>
     <string name="hotchpotch_password_tv">留存密码</string>
     <string name="hotchpotch_feedback_tv">反馈建议</string>
+    <string name="image">image</string>
 </resources>

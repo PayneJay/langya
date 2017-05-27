@@ -31,6 +31,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="12dp"
+                    android:contentDescription="@string/image"
                     android:src="@drawable/icon_user_name" />
 
                 <android.support.design.widget.TextInputLayout
@@ -58,6 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="12dp"
+                    android:contentDescription="@string/image"
                     android:src="@drawable/icon_phone" />
 
                 <android.support.design.widget.TextInputLayout
@@ -88,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="12dp"
+                    android:contentDescription="@string/image"
                     android:src="@drawable/icon_email" />
 
                 <android.support.design.widget.TextInputLayout
@@ -116,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="12dp"
+                    android:contentDescription="@string/image"
                     android:src="@drawable/icon_password" />
 
                 <android.support.design.widget.TextInputLayout
@@ -146,6 +150,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="12dp"
+                    android:contentDescription="@string/image"
                     android:src="@drawable/icon_feed_back" />
 
                 <android.support.design.widget.TextInputLayout

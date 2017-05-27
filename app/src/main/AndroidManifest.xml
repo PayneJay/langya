@@ -50,6 +50,7 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.PokerOverturnActivity" />
         <activity android:name=".activity.ObservableListViewTestActivity" />
+        <activity android:name=".activity.SignPaintActivity" />
 
 
         <!-- APP项目的其它配置... -->
