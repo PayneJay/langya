@@ -13,15 +13,11 @@ import android.net.NetworkInfo;
  */
 public class NetUtils {
     private NetUtils() {
-        /** cannot be instantiated **/
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
     /**
-     * 判断网络是否连接
-     *
-     * @param context
-     * @return
+     * @return 判断网络是否连接
      */
     public static boolean isConnected(Context context) {
 

@@ -9,11 +9,7 @@ import android.util.TypedValue;
  */
 public class DensityUtils {
     /**
-     * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
-     *
-     * @param ctx
-     * @param pxValue
-     * @return
+     * @return 根据手机的分辨率从 px(像素) 的单位 转成为 dp
      */
     public static int px2dip(Context ctx, float pxValue) {
         float scale = ctx.getResources().getDisplayMetrics().density;
@@ -21,11 +17,7 @@ public class DensityUtils {
     }
 
     /**
-     * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
-     *
-     * @param context
-     * @param dpValue
-     * @return
+     * @return 根据手机的分辨率从 dp 的单位 转成为 px(像素)
      */
     public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
@@ -33,11 +25,7 @@ public class DensityUtils {
     }
 
     /**
-     * sp转px
-     *
-     * @param context
-     * @param spVal
-     * @return
+     * @return sp转px
      */
     public static int sp2px(Context context, float spVal) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
@@ -45,11 +33,7 @@ public class DensityUtils {
     }
 
     /**
-     * px转sp
-     *
-     * @param context
-     * @param pxVal
-     * @return
+     * @return px转sp
      */
     public static float px2sp(Context context, float pxVal) {
         return (pxVal / context.getResources().getDisplayMetrics().scaledDensity);

@@ -16,15 +16,15 @@ import java.net.URL;
 public class HttpUtils {
     private static final int TIMEOUT_IN_MILLIONS = 5000;
 
-    public interface CallBack {
+    interface CallBack {
         void onRequestComplete(String result);
     }
 
     /**
      * 异步的Get请求
      *
-     * @param urlStr
-     * @param callBack
+     * @param urlStr   url
+     * @param callBack 回调
      */
     public static void doGetAsyn(final String urlStr, final CallBack callBack) {
         new Thread() {
@@ -47,10 +47,10 @@ public class HttpUtils {
     /**
      * 异步的Post请求
      *
-     * @param urlStr
-     * @param params
-     * @param callBack
-     * @throws Exception
+     * @param urlStr   url
+     * @param params   请求参数
+     * @param callBack 回调
+     * @throws Exception 异常
      */
     public static void doPostAsyn(final String urlStr, final String params,
                                   final CallBack callBack) throws Exception {

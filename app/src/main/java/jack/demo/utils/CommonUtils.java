@@ -17,6 +17,11 @@ import java.io.IOException;
  */
 
 public class CommonUtils {
+    /**
+     * @param bmp     图片
+     * @param quality 压缩质量
+     * @return 保存图片，返回保存路径
+     */
     public static String saveImage(Bitmap bmp, int quality) {
         if (bmp == null) {
             return null;

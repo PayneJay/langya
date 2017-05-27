@@ -8,18 +8,17 @@ import android.widget.Toast;
  * Created by weipengjie on 16/8/5.
  */
 public class ToastUtils {
-    public static boolean isShow = true;
+    private static boolean isShow = true;
 
     private ToastUtils() {
-        /** cannot be instantiated**/
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
     /**
      * 短时间显示Toast
      *
-     * @param context
-     * @param message
+     * @param context 上下文
+     * @param message 显示内容
      */
     public static void showShort(Context context, CharSequence message) {
         if (isShow) {
@@ -30,8 +29,8 @@ public class ToastUtils {
     /**
      * 短时间显示Toast
      *
-     * @param context
-     * @param message
+     * @param context 上下文
+     * @param message 显示内容
      */
     public static void showShort(Context context, int message) {
         if (isShow) {
@@ -42,8 +41,8 @@ public class ToastUtils {
     /**
      * 长时间显示Toast
      *
-     * @param context
-     * @param message
+     * @param context 上下文
+     * @param message 显示内容
      */
     public static void showLong(Context context, CharSequence message) {
         if (isShow) {
@@ -54,8 +53,8 @@ public class ToastUtils {
     /**
      * 长时间显示Toast
      *
-     * @param context
-     * @param message
+     * @param context 上下文
+     * @param message 显示内容
      */
     public static void showLong(Context context, int message) {
         if (isShow) {
@@ -66,9 +65,9 @@ public class ToastUtils {
     /**
      * 自定义显示Toast时间
      *
-     * @param context
-     * @param message
-     * @param duration
+     * @param context  上下文
+     * @param message  显示内容
+     * @param duration 显示时长
      */
     public static void show(Context context, CharSequence message, int duration) {
         if (isShow) {
@@ -79,9 +78,9 @@ public class ToastUtils {
     /**
      * 自定义显示Toast时间
      *
-     * @param context
-     * @param message
-     * @param duration
+     * @param context  上下文
+     * @param message  显示内容
+     * @param duration 显示时长
      */
     public static void show(Context context, int message, int duration) {
         if (isShow) {

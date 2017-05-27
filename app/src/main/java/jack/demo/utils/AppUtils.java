@@ -17,7 +17,6 @@ import java.util.List;
 public class AppUtils {
 
     private AppUtils() {
-        /**cannot be instantiated **/
         throw new UnsupportedOperationException("cannot be instantiated");
 
     }
@@ -62,7 +61,7 @@ public class AppUtils {
     /**
      * 判断app是否正在运行
      *
-     * @param ctx 上下文
+     * @param ctx         上下文
      * @param packageName 应用程序包名
      * @return boolean值
      */
@@ -86,7 +85,7 @@ public class AppUtils {
     /**
      * app 是否在后台运行
      *
-     * @param ctx 上下文
+     * @param ctx         上下文
      * @param packageName 应用程序包名
      * @return 是否在后台运行
      */
@@ -137,6 +136,7 @@ public class AppUtils {
 
     /**
      * 获取应用程序名称
+     *
      * @param context 上下文
      * @return 应用程序名称
      */
