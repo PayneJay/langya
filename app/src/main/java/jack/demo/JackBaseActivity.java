@@ -13,6 +13,7 @@ import com.tencent.android.tpush.XGPushClickedResult;
 import com.tencent.android.tpush.XGPushManager;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import jack.demo.activity.ProgressViewActivity;
 
@@ -29,8 +30,6 @@ public abstract class JackBaseActivity extends Activity {
     @BindView(R.id.iv_top_save)
     protected ImageView ivTopSave;
 
-    private FrameLayout rootView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,12 +38,13 @@ public abstract class JackBaseActivity extends Activity {
     }
 
     private void initView() {
-        rootView = (FrameLayout) findViewById(R.id.activity_content_layout);
+        FrameLayout rootView = (FrameLayout) findViewById(R.id.activity_content_layout);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 android.view.ViewGroup.LayoutParams.MATCH_PARENT,
                 android.view.ViewGroup.LayoutParams.MATCH_PARENT);
         View mView = LayoutInflater.from(this).inflate(getContentView(), null);
         rootView.addView(mView, params);
+        ButterKnife.bind(this);
 
         init();
     }
@@ -52,6 +52,7 @@ public abstract class JackBaseActivity extends Activity {
     protected abstract void init();
 
     /**
+     *
      * @return 当前activity的layoutID
      */
     protected abstract int getContentView();

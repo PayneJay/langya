@@ -1,10 +1,10 @@
 package jack.demo.activity;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.utils.ProgressHandler;
@@ -25,9 +25,9 @@ import static jack.demo.widget.ProgressBarView.STROKE;
  * Destriptions:自定义 view 实现下载进度
  * Created by weipengjie on 16/7/19.
  */
-public class ProgressViewActivity extends JackBaseActivity {
+public class ProgressViewActivity extends JackBaseActivity implements View.OnClickListener {
 
-    @BindView(R.id.btn)
+    @BindView(R.id.btn_download_start)
     Button btnDownload;
     @BindView(R.id.view)
     ProgressBarView progressBarView;
@@ -100,6 +100,8 @@ public class ProgressViewActivity extends JackBaseActivity {
 
         initView();
 
+        btnDownload.setOnClickListener(this);
+
         progressHandler.setProgress(new Progress() {
             @Override
             public void setSchedule(int schedule) {
@@ -124,10 +126,13 @@ public class ProgressViewActivity extends JackBaseActivity {
         return R.layout.activity_progress_bar;
     }
 
-    @OnClick(R.id.btn)
-    public void onClick() {
-        progressHandler.sendEmptyMessageDelayed(UPDATE, TIME);
-        imgDownLoad.setImageResource(R.drawable.icon_down);
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_download_start:
+                progressHandler.sendEmptyMessageDelayed(UPDATE, TIME);
+                imgDownLoad.setImageResource(R.drawable.icon_down);
+                break;
+        }
     }
-
 }

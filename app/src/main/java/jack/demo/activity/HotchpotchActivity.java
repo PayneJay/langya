@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import butterknife.BindView;
 import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
@@ -15,11 +16,16 @@ import jack.demo.R;
  */
 
 public class HotchpotchActivity extends JackBaseActivity {
-    private TextInputEditText mNameEditx;
-    private TextInputEditText mPhoneEditx;
-    private TextInputEditText mEmailEditx;
-    private TextInputEditText mPasswordEditx;
-    private TextInputEditText mFeedbackEditx;
+    @BindView(R.id.edit_name)
+    TextInputEditText mNameEditx;
+    @BindView(R.id.edit_phone)
+    TextInputEditText mPhoneEditx;
+    @BindView(R.id.edit_email)
+    TextInputEditText mEmailEditx;
+    @BindView(R.id.edit_password)
+    TextInputEditText mPasswordEditx;
+    @BindView(R.id.edit_feedback)
+    TextInputEditText mFeedbackEditx;
 
     private String mContentName;
     private String mContentPhone;
