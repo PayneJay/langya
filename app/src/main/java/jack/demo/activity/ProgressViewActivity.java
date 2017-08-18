@@ -5,7 +5,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import butterknife.BindView;
-import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.utils.ProgressHandler;
 import jack.demo.utils.ProgressHandler.Progress;

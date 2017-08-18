@@ -1,7 +1,6 @@
 package jack.demo.activity;
 
 import butterknife.BindView;
-import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.widget.CollapsedTextView;
 

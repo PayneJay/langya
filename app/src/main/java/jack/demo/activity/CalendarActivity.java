@@ -6,7 +6,6 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.adapter.CalendarViewAdapter;
 import jack.demo.model.CustomDate;

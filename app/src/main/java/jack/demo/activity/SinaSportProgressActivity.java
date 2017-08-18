@@ -2,7 +2,6 @@ package jack.demo.activity;
 
 import android.widget.TextView;
 
-import jack.demo.JackBaseActivity;
 import jack.demo.R;
 import jack.demo.widget.SinaSportLayout;
 import jack.demo.widget.SinaSportLayout.OnSinaSportListener;

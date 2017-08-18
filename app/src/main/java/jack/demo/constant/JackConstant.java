@@ -2,6 +2,8 @@ package jack.demo.constant;
 
 import android.graphics.Color;
 
+import jack.demo.utils.CommonUtils;
+
 /**
  * Destriptions:常量接口
  * Created by weipengjie on 16/7/19.
@@ -10,7 +12,7 @@ public interface JackConstant {
     /**
      * 自定义加载进度常量定义
      */
-    interface ProgressDefaults{
+    interface ProgressDefaults {
         /**
          * 判断数据的最小值
          */
@@ -69,5 +71,30 @@ public interface JackConstant {
          * 默认风格
          */
         int STYLE = 1;
+    }
+
+    interface LoginInfo {
+        String USER_NAME = "Jack@gmail.com";
+        String PASSWORD = "123456";
+    }
+
+    interface Activity {
+        /**
+         * get action through root filter key
+         */
+        String ROOT_FILTER = CommonUtils.application.getPackageName()
+                + "_root_filter";
+        /**
+         * get update infos through root update key
+         */
+        String ROOT_UPDATE = "root_update";
+        /**
+         * get update app bean's key
+         */
+        String ROOT_GOTO_UPDATE_APP = "goto_update_app";
+        /**
+         * close app
+         */
+        int ROOT_CLOSE_APP = 1;
     }
 }

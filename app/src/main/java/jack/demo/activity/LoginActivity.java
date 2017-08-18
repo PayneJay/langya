@@ -14,8 +14,11 @@ import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import jack.demo.JackBaseActivity;
 import jack.demo.R;
+import jack.demo.utils.ToastUtils;
+
+import static jack.demo.constant.JackConstant.LoginInfo.PASSWORD;
+import static jack.demo.constant.JackConstant.LoginInfo.USER_NAME;
 
 /**
  * Destriptions:TextInputLayout的一个登录页面
@@ -29,6 +32,8 @@ public class LoginActivity extends JackBaseActivity {
 
     @Override
     protected void init() {
+        ivTopBack.setVisibility(View.INVISIBLE);
+
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         mPasswordView = (TextInputEditText) findViewById(R.id.password);
 
@@ -59,6 +64,15 @@ public class LoginActivity extends JackBaseActivity {
         return R.layout.activity_login_layout;
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exitByDoubleClick();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
     /**
      * 说明:获取用户输入的内容并调用相应的验证方法
      */
@@ -66,9 +80,22 @@ public class LoginActivity extends JackBaseActivity {
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
 
-        if (isEmailValid(email) && isPasswordValid(password)) {
+        if (isEmailValid(email) && isPasswordValid(password) && isMatch(email, password)) {
             login();
         }
+    }
+
+    /**
+     * @param email    邮箱
+     * @param password 密码
+     * @return 用户名密码是否匹配
+     */
+    private boolean isMatch(String email, String password) {
+        if (!USER_NAME.equals(email) || !PASSWORD.equals(password)) {
+            ToastUtils.showShort(this, "账号或密码错误！");
+            return false;
+        }
+        return true;
     }
 
 

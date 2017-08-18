@@ -1,6 +1,5 @@
 package jack.demo.activity;
 
-import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
 /**

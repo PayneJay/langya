@@ -23,13 +23,14 @@
     <uses-permission android:name="android.permission.BATTERY_STATS" />
 
     <application
+        android:name=".JackBaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,20 +38,49 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.MoreTextViewActivity" />
-        <activity android:name=".activity.CollapsedActivity" />
-        <activity android:name=".activity.ProgressViewActivity" />
-        <activity android:name=".activity.SinaSportProgressActivity" />
-        <activity android:name=".activity.FlexboxLayoutActivity" />
-        <activity android:name=".activity.FlowLayoutActivity" />
-        <activity android:name=".activity.ScrollTableViewActicity" />
-        <activity android:name=".activity.CalendarActivity" />
-        <activity android:name=".activity.PanelActivity" />
-        <activity android:name=".activity.HotchpotchActivity" />
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.PokerOverturnActivity" />
-        <activity android:name=".activity.ObservableListViewTestActivity" />
-        <activity android:name=".activity.SignPaintActivity" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MoreTextViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CollapsedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ProgressViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SinaSportProgressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FlexboxLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FlowLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ScrollTableViewActicity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CalendarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PanelActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HotchpotchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PokerOverturnActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ObservableListViewTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SignPaintActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
         <!-- APP项目的其它配置... -->

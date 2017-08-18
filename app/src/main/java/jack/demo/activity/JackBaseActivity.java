@@ -1,8 +1,10 @@
-package jack.demo;
+package jack.demo.activity;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -15,7 +17,9 @@ import com.tencent.android.tpush.XGPushManager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import jack.demo.activity.ProgressViewActivity;
+import jack.demo.R;
+import jack.demo.constant.JackConstant;
+import jack.demo.utils.ToastUtils;
 
 /**
  * Destriptions:Activity基类
@@ -29,6 +33,8 @@ public abstract class JackBaseActivity extends Activity {
     protected TextView tvTopTitle;
     @BindView(R.id.iv_top_save)
     protected ImageView ivTopSave;
+
+    protected boolean isExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +58,6 @@ public abstract class JackBaseActivity extends Activity {
     protected abstract void init();
 
     /**
-     *
      * @return 当前activity的layoutID
      */
     protected abstract int getContentView();
@@ -92,5 +97,30 @@ public abstract class JackBaseActivity extends Activity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
+    }
+
+    /**
+     * double quite the app
+     */
+    public void exitByDoubleClick() {
+        if (!isExit) {
+            isExit = true;
+            ToastUtils.showShort(this, "再按一下退出！");
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    isExit = false;
+                }
+            }, 2000);
+        } else {
+            Intent intent = new Intent(JackConstant.Activity.ROOT_FILTER);
+            intent.putExtra(JackConstant.Activity.ROOT_UPDATE,
+                    JackConstant.Activity.ROOT_CLOSE_APP);
+            sendBroadcast(intent);
+            ActivityManager acManager = (ActivityManager) this
+                    .getSystemService(ACTIVITY_SERVICE);
+            acManager.killBackgroundProcesses(getPackageName());
+            finish();
+        }
     }
 }

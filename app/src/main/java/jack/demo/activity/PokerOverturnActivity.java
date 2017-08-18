@@ -6,7 +6,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import butterknife.BindView;
-import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
 /**

@@ -60,11 +60,11 @@ public class ObservableListViewTestActivity extends AppCompatActivity implements
     public void onUpOrCancelMotionEvent(ScrollState scrollState) {
         ActionBar ab = getSupportActionBar();
         if (scrollState == ScrollState.UP) {
-            if (ab.isShowing()) {
+            if (ab != null && ab.isShowing()) {
                 ab.hide();
             }
         } else if (scrollState == ScrollState.DOWN) {
-            if (!ab.isShowing()) {
+            if (ab != null && !ab.isShowing()) {
                 ab.show();
             }
         }

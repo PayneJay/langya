@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,8 +20,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
 import static android.content.pm.PackageManager.GET_ACTIVITIES;
@@ -40,8 +38,11 @@ public class MainActivity extends JackBaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
-                intent.setClassName(MainActivity.this, mActivities.get(position).name);
-                startActivity(intent);
+                String className = mActivities.get(position).name;
+                if ("LoginActivity".equals(className)) {
+                    intent.setClassName(MainActivity.this, className);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -49,6 +50,15 @@ public class MainActivity extends JackBaseActivity {
     @Override
     protected int getContentView() {
         return R.layout.activity_main;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exitByDoubleClick();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     /**
@@ -105,12 +115,5 @@ public class MainActivity extends JackBaseActivity {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
     }
 }

@@ -6,7 +6,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import butterknife.BindView;
-import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
 /**

@@ -10,7 +10,6 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import jack.demo.JackBaseActivity;
 import jack.demo.R;
 
 import static android.widget.Toast.LENGTH_SHORT;

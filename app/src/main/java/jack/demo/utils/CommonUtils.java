@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import jack.demo.JackBaseApplication;
+
 /**
  * ================================================
  * description:通用工具类
@@ -17,6 +19,8 @@ import java.io.IOException;
  */
 
 public class CommonUtils {
+    public static JackBaseApplication application;
+
     /**
      * @param bmp     图片
      * @param quality 压缩质量
