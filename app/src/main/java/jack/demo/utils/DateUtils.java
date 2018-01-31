@@ -1,7 +1,9 @@
 package jack.demo.utils;
 
 import android.annotation.SuppressLint;
+import android.text.TextUtils;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -15,6 +17,9 @@ import jack.demo.model.CustomDate;
  */
 public class DateUtils {
     public static String[] weekName = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
+    //格式化日期格式
+    private static DateFormat monthFormat = new SimpleDateFormat("yyyy-MM");
+    private static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     public static int getMonthDays(int year, int month) {
         if (month > 12) {
@@ -48,12 +53,35 @@ public class DateUtils {
         return Calendar.getInstance().get(Calendar.MONTH) + 1;
     }
 
+    /**
+     * @return 当月天数
+     */
     public static int getCurrentMonthDay() {
         return Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
     }
 
     public static int getWeekDay() {
         return Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+    }
+
+    /**
+     * 这里最后减1是因为返回的值为1——7，且从星期日开始，减1后就与正常的星期吻合，易于理解
+     *
+     * @return 获取当月的第一天是星期几
+     */
+    public static int getWeekOfMonth() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        return calendar.get(Calendar.DAY_OF_WEEK) - 1;
+    }
+
+    /**
+     * 获取当天是当月的第几天
+     *
+     * @return
+     */
+    public static int getDayOfMonth() {
+        return Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
     }
 
     public static int getHour() {
@@ -65,7 +93,6 @@ public class DateUtils {
     }
 
     public static CustomDate getNextSunday() {
-
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DATE, 7 - getWeekDay() + 1);
         CustomDate date = new CustomDate(c.get(Calendar.YEAR),
@@ -121,4 +148,58 @@ public class DateUtils {
         return (date.year == DateUtils.getYear() &&
                 date.month == DateUtils.getMonth());
     }
+
+    /**
+     * 将字符串日期转换为Date类型
+     *
+     * @param strDate
+     * @return
+     */
+    public static Date str2Date(String strDate) {
+        Date date = null;
+        try {
+            if (!TextUtils.isEmpty(strDate)) {
+                date = monthFormat.parse(strDate);
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
+
+    /**
+     * Date转为String
+     *
+     * @param date
+     * @return
+     */
+    public static String Date2Str(Date date) {
+        try {
+            return monthFormat.format(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    /**
+     * 判断给定字符串时间是否为今日
+     *
+     * @param sDate
+     * @return boolean
+     */
+    public static boolean isToday(String sDate) {
+        boolean b = false;
+        Date time = str2Date(sDate);
+        Date today = new Date();
+        if (time != null) {
+            String nowDate = dateFormat.format(today);
+            String timeDate = dateFormat.format(time);
+            if (nowDate.equals(timeDate)) {
+                b = true;
+            }
+        }
+        return b;
+    }
+
 }

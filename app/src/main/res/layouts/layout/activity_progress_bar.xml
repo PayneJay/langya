@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/dimen_size_16dp"
+    android:paddingLeft="@dimen/dimen_size_16dp"
+    android:paddingRight="@dimen/dimen_size_16dp"
+    android:paddingTop="@dimen/dimen_size_16dp"
     tools:context=".activity.ProgressViewActivity">
 
     <Button
@@ -14,45 +14,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_style"
-        android:paddingBottom="@dimen/button_padding_top_bottom"
-        android:paddingLeft="@dimen/button_padding_left_right"
-        android:paddingRight="@dimen/button_padding_left_right"
-        android:paddingTop="@dimen/button_padding_top_bottom"
+        android:paddingBottom="@dimen/dimen_size_5dp"
+        android:paddingLeft="@dimen/dimen_size_10dp"
+        android:paddingRight="@dimen/dimen_size_10dp"
+        android:paddingTop="@dimen/dimen_size_5dp"
         android:text="@string/download" />
 
     <jack.demo.widget.ProgressBarView
         android:id="@+id/view"
-        android:layout_width="@dimen/progress_bar_width"
-        android:layout_height="@dimen/progress_bar_height"
-        android:layout_marginLeft="@dimen/widget_margin"
-        android:layout_marginTop="@dimen/widget_margin"
+        android:layout_width="@dimen/dimen_size_40dp"
+        android:layout_height="@dimen/dimen_size_40dp"
+        android:layout_marginLeft="@dimen/dimen_size_20dp"
+        android:layout_marginTop="@dimen/dimen_size_20dp"
         android:layout_toRightOf="@+id/btn_download_start" />
 
     <jack.demo.widget.ProgressBarView
         android:id="@+id/view1"
-        android:layout_width="@dimen/progress_bar_width"
-        android:layout_height="@dimen/progress_bar_height"
-        android:layout_marginLeft="@dimen/widget_margin"
-        android:layout_marginTop="@dimen/widget_margin"
+        android:layout_width="@dimen/dimen_size_40dp"
+        android:layout_height="@dimen/dimen_size_40dp"
+        android:layout_marginLeft="@dimen/dimen_size_20dp"
+        android:layout_marginTop="@dimen/dimen_size_20dp"
         android:layout_toRightOf="@+id/view" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/widget_margin"
-        android:layout_marginTop="@dimen/widget_margin"
+        android:layout_marginLeft="@dimen/dimen_size_20dp"
+        android:layout_marginTop="@dimen/dimen_size_20dp"
         android:layout_toRightOf="@+id/view1">
 
         <jack.demo.widget.ProgressBarView
             android:id="@+id/view2"
-            android:layout_width="@dimen/progress_bar_width"
-            android:layout_height="@dimen/progress_bar_height"
+            android:layout_width="@dimen/dimen_size_40dp"
+            android:layout_height="@dimen/dimen_size_40dp"
             android:layout_centerInParent="true" />
 
         <ImageView
             android:id="@+id/img_download_status"
-            android:layout_width="@dimen/image_view_width"
-            android:layout_height="@dimen/image_view_height"
+            android:layout_width="@dimen/dimen_size_30dp"
+            android:layout_height="@dimen/dimen_size_30dp"
             android:layout_centerInParent="true"
             android:src="@drawable/icon_down" />
     </RelativeLayout>

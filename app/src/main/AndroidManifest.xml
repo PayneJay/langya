@@ -75,9 +75,6 @@
             android:name=".activity.PokerOverturnActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ObservableListViewTestActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activity.SignPaintActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
@@ -114,6 +111,7 @@
                 <action android:name="android.intent.action" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.ViewActivity" />
 
         <!-- 【必须】 信鸽service -->
         <service

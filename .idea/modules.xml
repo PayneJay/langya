@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JackDemo.iml" filepath="$PROJECT_DIR$/JackDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swipe-refresh-recyclerview/swipe-refresh-recyclerview.iml" filepath="$PROJECT_DIR$/swipe-refresh-recyclerview/swipe-refresh-recyclerview.iml" />
     </modules>
   </component>
 </project>

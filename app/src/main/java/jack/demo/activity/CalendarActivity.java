@@ -64,7 +64,7 @@ public class CalendarActivity extends JackBaseActivity implements OnCellClickLis
     private void setViewPager() {
         mViewPager.setAdapter(adapter);
         mViewPager.setCurrentItem(498);
-        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageSelected(int position) {

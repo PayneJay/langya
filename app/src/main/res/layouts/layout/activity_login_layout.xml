@@ -84,7 +84,7 @@
                 android:background="@color/colorPrimaryDark"
                 android:padding="10dp"
                 android:text="@string/action_sign_in"
-                android:textColor="@color/white"
+                android:textColor="@color/color_white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

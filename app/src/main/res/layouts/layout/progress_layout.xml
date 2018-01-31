@@ -8,9 +8,9 @@
         android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:left_progress_bg="@color/bg_left_progress"
+        app:left_progress_bg="@color/color_red_dd2f1c"
         app:left_progress_value="1580"
-        app:right_progress_bg="@color/bg_right_progress"
+        app:right_progress_bg="@color/color_blue_1d69e1"
         app:right_progress_value="800"
         app:left_right_progress_spacing="1"
         app:progress_anim_duration="4000"/>
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/progress"
         android:layout_alignParentLeft="true"
-        android:textColor="@color/bg_left_progress"
+        android:textColor="@color/color_red_dd2f1c"
         android:text="100"/>
 
     <TextView
@@ -29,6 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/progress"
         android:layout_alignParentRight="true"
-        android:textColor="@color/bg_right_progress"
+        android:textColor="@color/color_blue_1d69e1"
         android:text="100"/>
 </RelativeLayout>

@@ -15,6 +15,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import jack.demo.R;
+import jack.demo.utils.SPUtils;
 import jack.demo.utils.ToastUtils;
 
 import static jack.demo.constant.JackConstant.LoginInfo.PASSWORD;
@@ -26,6 +27,7 @@ import static jack.demo.constant.JackConstant.LoginInfo.USER_NAME;
  */
 
 public class LoginActivity extends JackBaseActivity {
+    private static final String IS_LOGIN = "is_login";
     private AutoCompleteTextView mEmailView;
     private TextInputEditText mPasswordView;
     private ProgressDialog mProgressDialog;
@@ -33,6 +35,14 @@ public class LoginActivity extends JackBaseActivity {
     @Override
     protected void init() {
         ivTopBack.setVisibility(View.INVISIBLE);
+
+        boolean isLogin = (boolean) SPUtils.get(this, IS_LOGIN, false);
+        if (isLogin) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
 
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         mPasswordView = (TextInputEditText) findViewById(R.id.password);
@@ -95,6 +105,8 @@ public class LoginActivity extends JackBaseActivity {
             ToastUtils.showShort(this, "账号或密码错误！");
             return false;
         }
+
+        SPUtils.put(this, IS_LOGIN, true);
         return true;
     }
 
@@ -112,9 +124,9 @@ public class LoginActivity extends JackBaseActivity {
         } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             showToast("邮箱格式不正确!");
             return false;
-        } else {
-            return true;
         }
+        return true;
+
     }
 
     /**
@@ -130,9 +142,8 @@ public class LoginActivity extends JackBaseActivity {
         } else if (password.length() < 6) {
             showToast("请输入至少6位密码!");
             return false;
-        } else {
-            return true;
         }
+        return true;
     }
 
     /**

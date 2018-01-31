@@ -52,10 +52,10 @@ public class RatioProgressBar extends View {
         int rightProgressBg;
         try {
             leftProgressBg = t.getColor(R.styleable.RatioProgressBar_left_progress_bg,
-                    getResources().getColor(R.color.bg_left_progress));
+                    getResources().getColor(R.color.color_red_dd2f1c));
             mLeftValue = t.getInt(R.styleable.RatioProgressBar_left_progress_value, 0);
             rightProgressBg = t.getColor(R.styleable.RatioProgressBar_right_progress_bg,
-                    getResources().getColor(R.color.bg_right_progress));
+                    getResources().getColor(R.color.color_blue_1d69e1));
             mRightValue = t.getInt(R.styleable.RatioProgressBar_right_progress_value, 0);
 
             mProgressHeight = t.getDimensionPixelSize(R.styleable.RatioProgressBar_progress_height, 15);

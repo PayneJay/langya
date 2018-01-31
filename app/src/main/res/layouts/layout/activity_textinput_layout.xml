@@ -181,7 +181,7 @@
                 android:background="@drawable/btn_selector"
                 android:padding="10dp"
                 android:text="@string/hotchpotch_submit_btn"
-                android:textColor="@color/white"
+                android:textColor="@color/color_white"
                 android:textSize="20sp" />
 
         </LinearLayout>

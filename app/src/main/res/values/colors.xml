@@ -3,11 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="bg_left_progress">#DD2F1C</color>
-    <color name="bg_right_progress">#1D69E1</color>
-    <color name="white">#ffffff</color>
-    <color name="canlendar_text_color">#323232</color>
+    <color name="color_red_dd2f1c">#DD2F1C</color>
+    <color name="color_blue_1d69e1">#1D69E1</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_gray_323232">#323232</color>
     <color name="colorDivider">#FF4081</color>
+    <color name="color_gray_d8d8d8">#d8d8d8</color>
 
     <drawable name="toolbar_bg">#30000000</drawable>
 </resources>

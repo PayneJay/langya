@@ -17,7 +17,6 @@
             android:layout_width="2250dp"
             android:layout_height="fill_parent"
             android:layout_gravity="center"
-            android:background="#00ccff"
             android:columnWidth="50dip"
             android:gravity="center"
             android:numColumns="45"

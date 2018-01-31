@@ -1,7 +1,6 @@
 package jack.demo.adapter;
 
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -22,11 +21,11 @@ public class CalendarViewAdapter<V extends View> extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
 
-        if (((ViewPager) container).getChildCount() == views.length) {
-            ((ViewPager) container).removeView(views[position % views.length]);
+        if (container.getChildCount() == views.length) {
+            container.removeView(views[position % views.length]);
         }
 
-        ((ViewPager) container).addView(views[position % views.length], 0);
+        container.addView(views[position % views.length], 0);
         return views[position % views.length];
     }
 
@@ -37,12 +36,12 @@ public class CalendarViewAdapter<V extends View> extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == ((View) object);
+        return view == object;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        ((ViewPager) container).removeView((View) container);
+        container.removeView(container);
     }
 
     public V[] getAllItems() {

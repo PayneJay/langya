@@ -39,7 +39,7 @@ public class MainActivity extends JackBaseActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
                 String className = mActivities.get(position).name;
-                if ("LoginActivity".equals(className)) {
+                if (!"LoginActivity".equals(className)) {
                     intent.setClassName(MainActivity.this, className);
                     startActivity(intent);
                 }
@@ -86,11 +86,9 @@ public class MainActivity extends JackBaseActivity {
      */
     private void updateActivityInfos() {
         try {
-            PackageInfo pi = getPackageManager().getPackageInfo("jack.demo",
-                    GET_ACTIVITIES);
+            PackageInfo pi = getPackageManager().getPackageInfo("jack.demo", GET_ACTIVITIES);
             // 获取所有Activity信息
-            mActivities = new ArrayList<>(
-                    Arrays.asList(pi.activities));
+            mActivities = new ArrayList<>(Arrays.asList(pi.activities));
             //获取本类的名字
             String ourName = getClass().getName();
             //获取Activity的名字
