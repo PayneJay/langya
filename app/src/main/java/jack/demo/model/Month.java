@@ -13,4 +13,5 @@ public class Month {
     public String monthText;
     public int monthDays;
     public int week;
+    public CustomDate customDate;
 }

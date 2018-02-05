@@ -16,6 +16,7 @@ import butterknife.BindView;
 import jack.demo.R;
 import jack.demo.adapter.MyCalendarAdapter;
 import jack.demo.holder.ItemInfo;
+import jack.demo.model.CustomDate;
 import jack.demo.model.Month;
 import jack.demo.utils.DateUtils;
 
@@ -29,6 +30,9 @@ import jack.demo.utils.DateUtils;
  */
 
 public class ViewActivity extends JackBaseActivity {
+    //展示从当前月份起往后多少个月
+    private static final int FROM_MONTH_ON = 20;
+
     @BindView(R.id.swipe_refresh_recycler_view)
     SwipeRefreshRecyclerView mRecyclerView;
 
@@ -53,14 +57,15 @@ public class ViewActivity extends JackBaseActivity {
     }
 
     private void initData() {
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < FROM_MONTH_ON; i++) {
             Month monthBean = new Month();
-            int year = DateUtils.getYear();
-            int month = DateUtils.getMonth() + i;
+            int year = DateUtils.getYear() + (i / 12);
+            int month = DateUtils.getMonth() + (i % 12);
             Date date = DateUtils.getDateFromString(year, month);
             monthBean.monthText = DateUtils.Date2Str(date);
             monthBean.monthDays = DateUtils.getMonthDays(year, month);
             monthBean.week = DateUtils.getWeekDayFromDate(year, month);
+            monthBean.customDate = new CustomDate(year, month, DateUtils.getDayOfMonth());
 
             ItemInfo.MonthBodyItemInfo bodyItemInfo = new ItemInfo.MonthBodyItemInfo();
             bodyItemInfo.setData(monthBean);
@@ -72,4 +77,5 @@ public class ViewActivity extends JackBaseActivity {
     protected int getContentView() {
         return R.layout.activity_general_view;
     }
+
 }

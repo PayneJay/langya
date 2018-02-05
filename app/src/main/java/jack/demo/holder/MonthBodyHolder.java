@@ -35,8 +35,7 @@ public class MonthBodyHolder extends BaseHolder<Month> {
     @Override
     public void onBind(Month month) {
         mTitleView.setText(month.monthText);
-        mCalendarView.setMonthDays(month.monthDays);
-        mCalendarView.setWeek(month.week);
-        mCalendarView.invalidate();
+        mCalendarView.setMonth(month);
+        mCalendarView.requestLayout();
     }
 }

@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import jack.demo.model.CustomDate;
+import jack.demo.model.Month;
 import jack.demo.utils.DateUtils;
 import jack.demo.utils.ScreenUtils;
 
@@ -53,6 +55,8 @@ public class CalendarView extends View {
 
     private int monthDays;
     private int mWeek;
+    private CustomDate mCustomDate;
+    private Context mContext;
 
     public CalendarView(Context context) {
         super(context);
@@ -70,6 +74,7 @@ public class CalendarView extends View {
     }
 
     private void init(Context context) {
+        this.mContext = context;
         initPaint();
         mCellWidth = ScreenUtils.getScreenWidth(context) / TOTAL_COL;
     }
@@ -89,31 +94,58 @@ public class CalendarView extends View {
 
         todayPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         todayPaint.setAntiAlias(true);
+        todayPaint.setFakeBoldText(true);
         todayPaint.setColor(Color.RED);
         todayPaint.setTextSize(daySize);
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int cellCount = mWeek + monthDays;
+        int row;
+        if ((cellCount % TOTAL_COL) == 0) {
+            row = cellCount / TOTAL_COL;
+        } else {
+            row = (cellCount / TOTAL_COL) + 1;
+        }
+
+        setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),
+                getDefaultSize((int) mCellWidth * row, heightMeasureSpec));
+    }
+
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-//        int currentMonthDays = DateUtils.getCurrentMonthDay();
-
-//        int week = DateUtils.getWeekOfMonth();
-//        float startX = mCellWidth * mWeek;
-        for (int i = 1; i <= monthDays; i++) {
-            float startX = mCellWidth * (i % TOTAL_COL);
-            float startY = mCellWidth * (i / TOTAL_COL);
+        float startX;
+        for (int i = 0; i < monthDays; i++) {
+            startX = mCellWidth * ((i + mWeek) % TOTAL_COL);
+            float startY = mCellWidth * ((i + mWeek) / TOTAL_COL);
             drawCell(canvas, startX, startY);
-            drawDate(canvas, startX, startY, i);
+            drawDate(canvas, startX, startY, i + 1);
         }
     }
 
-    public void setMonthDays(int monthDays) {
-        this.monthDays = monthDays;
+    public static int getDefaultSize(int size, int measureSpec) {
+        int result = size;
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+
+        switch (specMode) {
+            case MeasureSpec.UNSPECIFIED:
+                result = size;
+                break;
+            case MeasureSpec.AT_MOST:
+            case MeasureSpec.EXACTLY:
+                result = specSize;
+                break;
+        }
+        return result;
     }
 
-    public void setWeek(int mWeek) {
-        this.mWeek = mWeek;
+    public void setMonth(Month month) {
+        this.mCustomDate = month.customDate;
+        this.mWeek = month.week;
+        this.monthDays = month.monthDays;
     }
 
     /**
@@ -127,8 +159,7 @@ public class CalendarView extends View {
     private void drawDate(Canvas canvas, float startX, float startY, int day) {
         startX = startX + mPadding;
         startY = startY + 3 * mPadding;
-        int dayOfMonth = DateUtils.getDayOfMonth();
-        if (dayOfMonth == day) {
+        if (DateUtils.getDayOfMonth() == day && DateUtils.isToday(mCustomDate)) {
             canvas.drawText(day + "", startX, startY, todayPaint);
         } else {
             canvas.drawText(day + "", startX, startY, dayPaint);
