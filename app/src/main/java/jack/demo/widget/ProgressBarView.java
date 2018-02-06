@@ -3,6 +3,7 @@ package jack.demo.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Typeface;
@@ -17,7 +18,7 @@ import jack.demo.constant.JackConstant;
  * Destriptions:自定义下载进度
  * Created by weipengjie on 16/7/19.
  */
-public class ProgressBarView extends View{
+public class ProgressBarView extends View {
     //空心
     public static final int STROKE = 1;
     //实心
@@ -129,6 +130,10 @@ public class ProgressBarView extends View{
                 if (currentProgress != 0) {
                     mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
                     canvas.drawArc(rectF, 0, 360 * currentProgress / JackConstant.ProgressDefaults.PROGRESS_BAR_MAX, true, mPaint);
+                }
+
+                if (currentProgress == 100) {
+                    mPaint.setColor(Color.TRANSPARENT);
                 }
                 break;
         }

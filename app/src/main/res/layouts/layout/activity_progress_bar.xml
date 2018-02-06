@@ -61,14 +61,13 @@
         android:id="@+id/rcMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        android:layout_above="@id/circle_loading_view" />
 
-    <jack.demo.widget.CirclePercentImageView
-        android:id="@+id/circle_percent_view"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:src="@drawable/booking"
-        android:layout_alignParentBottom="true" />
-
+    <jack.demo.widget.CircleLoadingView
+        android:id="@+id/circle_loading_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
