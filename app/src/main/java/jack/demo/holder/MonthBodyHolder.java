@@ -35,6 +35,7 @@ public class MonthBodyHolder extends BaseHolder<Month> {
     @Override
     public void onBind(Month month) {
         mTitleView.setText(month.monthText);
+//        mCalendarView.setDaySize(DensityUtils.sp2px(getActivity(), 50));
         mCalendarView.setMonth(month);
         mCalendarView.requestLayout();
     }

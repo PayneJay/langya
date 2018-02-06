@@ -29,7 +29,7 @@ import jack.demo.utils.DateUtils;
  * date: 2018/1/31.
  */
 
-public class ViewActivity extends JackBaseActivity {
+public class TouchCalendarActivity extends JackBaseActivity {
     //展示从当前月份起往后多少个月
     private static final int FROM_MONTH_ON = 20;
 
@@ -75,7 +75,7 @@ public class ViewActivity extends JackBaseActivity {
 
     @Override
     protected int getContentView() {
-        return R.layout.activity_general_view;
+        return R.layout.activity_touch_calendar_view;
     }
 
 }

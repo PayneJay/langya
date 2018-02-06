@@ -111,7 +111,7 @@
                 <action android:name="android.intent.action" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ViewActivity" />
+        <activity android:name=".activity.TouchCalendarActivity" />
 
         <!-- 【必须】 信鸽service -->
         <service

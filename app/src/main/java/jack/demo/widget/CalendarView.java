@@ -75,8 +75,9 @@ public class CalendarView extends View {
 
     private void init(Context context) {
         this.mContext = context;
-        initPaint();
         mCellWidth = ScreenUtils.getScreenWidth(context) / TOTAL_COL;
+        mPadding = mCellWidth / 10;
+        initPaint();
     }
 
     private void initPaint() {
@@ -146,6 +147,10 @@ public class CalendarView extends View {
         this.mCustomDate = month.customDate;
         this.mWeek = month.week;
         this.monthDays = month.monthDays;
+    }
+
+    public void setDaySize(int daySize) {
+        this.daySize = daySize;
     }
 
     /**
